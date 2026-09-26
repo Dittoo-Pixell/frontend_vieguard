@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Verifikasi Kode Email - Cadence Uniform Atelier</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#1E3A8A',
+              dark: '#17245F',
+              accent: '#EAF0FF',
+              bg: '#F7F9FC',
+            },
+            primary: '#1E3A8A',
+            'primary-dark': '#17245F',
+            'primary-soft': '#EAF0FF',
+            background: '#F7F9FC',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+  </style>
+</head>
+<body class="bg-[#F7F9FC] text-[#191C1E] antialiased min-h-screen flex flex-col justify-between">
+<!-- TOP NAVBAR -->
+<header class="w-full bg-white border-b border-[#E5E7EB] sticky top-0 z-50 shadow-sm">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<!-- Brand Logo -->
+<a class="flex items-center gap-3" href="#">
+<div class="w-10 h-10 rounded-xl bg-[#1E3A8A] flex items-center justify-center text-white shadow-sm">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">checkroom</span>
+</div>
+<div class="flex flex-col">
+<span class="font-bold text-lg leading-tight tracking-tight text-[#1E3A8A]">Cadence Uniform</span>
+<span class="text-xs uppercase tracking-wider text-[#6B7280] font-medium">Atelier Seragam Resmi</span>
+</div>
+</a>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-[#4B5563] hover:text-[#1E3A8A] transition-colors" href="#">Beranda</a>
+<a class="text-sm font-medium text-[#4B5563] hover:text-[#1E3A8A] transition-colors" href="#">Katalog</a>
+<a class="text-sm font-medium text-[#4B5563] hover:text-[#1E3A8A] transition-colors" href="#">Portofolio</a>
+<a class="text-sm font-medium text-[#4B5563] hover:text-[#1E3A8A] transition-colors" href="#">Bantuan</a>
+</nav>
+<!-- Action Button -->
+<div class="flex items-center gap-3">
+<a class="hidden sm:inline-flex items-center justify-center text-sm font-semibold text-[#1E3A8A] hover:bg-[#EAF0FF] px-4 py-2 rounded-lg transition-colors" href="#">
+          Masuk
+        </a>
+<a class="inline-flex items-center justify-center text-sm font-semibold text-white bg-[#1E3A8A] hover:bg-[#17245F] px-4 py-2 rounded-lg shadow-sm transition-all duration-150" href="#">
+          Daftar Akun
+        </a>
+</div>
+</div>
+</header>
+<!-- MAIN VERIFICATION CONTENT -->
+<main class="flex-1 flex items-center justify-center px-4 py-12 sm:py-16">
+<div class="w-full max-w-[500px] bg-white border border-[#E5E7EB] rounded-2xl shadow-[0_4px_16px_rgba(20,30,60,0.08)] p-7 sm:p-10">
+<!-- Card Header -->
+<div class="flex flex-col items-center text-center">
+<!-- Eyebrow Badge -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-[#EAF0FF] text-[#1E3A8A] mb-3">
+<span class="material-symbols-outlined text-sm font-semibold">verified_user</span>
+          VERIFIKASI KEAMANAN AKUN
+        </span>
+<!-- Title & Subtitle -->
+<h2 class="text-2xl sm:text-[26px] font-bold text-[#111827] tracking-tight mb-2">
+          Verifikasi Kode Email
+        </h2>
+<p class="text-sm text-[#4B5563] leading-relaxed max-w-sm">
+          Kami telah mengirimkan 6 digit kode OTP verifikasi angka ke alamat email Anda:
+        </p>
+<!-- Destination Email Badge with Edit Option -->
+<div class="w-full bg-[#EAF0FF] border border-[#D3E0FD] rounded-lg px-3.5 py-2.5 my-4 flex items-center justify-between gap-2 text-left">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-[#1E3A8A] text-lg shrink-0">mark_email_read</span>
+<span class="text-sm font-semibold text-[#1E3A8A] truncate" title="kontak@sman1prestasibangsa.sch.id">
+              kontak@sman1prestasibangsa.sch.id
+            </span>
+</div>
+<a class="text-xs font-bold text-[#1E3A8A] hover:underline shrink-0 flex items-center gap-0.5" href="#">
+<span>Ubah</span>
+<span class="material-symbols-outlined text-sm">edit</span>
+</a>
+</div>
+<p class="text-xs text-[#6B7280] mb-6">
+          Masukkan 6 digit angka di bawah ini untuk mengonfirmasi akun.
+        </p>
+</div>
+<!-- OTP Form -->
+<form class="w-full" id="otp-form" onsubmit="event.preventDefault();">
+<!-- 6 OTP Input Boxes -->
+<div class="grid grid-cols-6 gap-2 sm:gap-2.5 mb-6">
+<input aria-label="Digit 1" class="otp-box w-full aspect-square text-center text-2xl font-bold text-[#111827] bg-white border border-[#E5E7EB] rounded-[10px] focus:outline-none focus:border-[#1E3A8A] focus:ring-4 focus:ring-[#EAF0FF] transition-all" inputmode="numeric" maxlength="1" type="text" value="4"/>
+<input aria-label="Digit 2" class="otp-box w-full aspect-square text-center text-2xl font-bold text-[#111827] bg-white border border-[#E5E7EB] rounded-[10px] focus:outline-none focus:border-[#1E3A8A] focus:ring-4 focus:ring-[#EAF0FF] transition-all" inputmode="numeric" maxlength="1" type="text" value="8"/>
+<input aria-label="Digit 3" class="otp-box w-full aspect-square text-center text-2xl font-bold text-[#111827] bg-white border border-[#E5E7EB] rounded-[10px] focus:outline-none focus:border-[#1E3A8A] focus:ring-4 focus:ring-[#EAF0FF] transition-all" inputmode="numeric" maxlength="1" type="text" value="2"/>
+<input aria-label="Digit 4" autofocus="" class="otp-box w-full aspect-square text-center text-2xl font-bold text-[#111827] bg-white border-2 border-[#1E3A8A] rounded-[10px] focus:outline-none focus:border-[#1E3A8A] focus:ring-4 focus:ring-[#EAF0FF] transition-all shadow-sm" inputmode="numeric" maxlength="1" type="text" value=""/>
+<input aria-label="Digit 5" class="otp-box w-full aspect-square text-center text-2xl font-bold text-[#111827] bg-white border border-[#E5E7EB] rounded-[10px] focus:outline-none focus:border-[#1E3A8A] focus:ring-4 focus:ring-[#EAF0FF] transition-all" inputmode="numeric" maxlength="1" type="text" value=""/>
+<input aria-label="Digit 6" class="otp-box w-full aspect-square text-center text-2xl font-bold text-[#111827] bg-white border border-[#E5E7EB] rounded-[10px] focus:outline-none focus:border-[#1E3A8A] focus:ring-4 focus:ring-[#EAF0FF] transition-all" inputmode="numeric" maxlength="1" type="text" value=""/>
+</div>
+<!-- Timer & Resend Option -->
+<div class="flex flex-col sm:flex-row items-center justify-between text-xs text-[#6B7280] gap-2 mb-6 px-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-[#9CA3AF]">schedule</span>
+<span>Kirim ulang kode dalam <span class="font-bold text-[#111827]" id="countdown">00:52</span></span>
+</div>
+<button class="font-semibold text-[#9CA3AF] cursor-not-allowed transition-colors hover:underline" disabled="" id="btn-resend" type="button">
+            Kirim Ulang OTP
+          </button>
+</div>
+<!-- Primary CTA Button -->
+<button class="w-full h-12 bg-[#1E3A8A] hover:bg-[#17245F] text-white font-semibold text-sm rounded-[11px] shadow-md transition-all duration-200 flex items-center justify-center gap-2 group active:scale-[0.99]" type="submit">
+<span>Konfirmasi &amp; Lanjutkan</span>
+<span class="material-symbols-outlined text-lg transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
+</button>
+</form>
+<!-- Card Footer Navigation -->
+<div class="mt-7 pt-6 border-t border-[#F3F4F6] flex flex-col items-center gap-2 text-center">
+<a class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#1E3A8A] hover:text-[#17245F] transition-colors" href="#">
+<span class="material-symbols-outlined text-base">arrow_back</span>
+<span>Kembali ke Masuk</span>
+</a>
+</div>
+</div>
+</main>
+<!-- INSTITUTION DARK FOOTER (#17245F) -->
+<footer class="w-full bg-[#17245F] text-white pt-14 pb-8 border-t border-[#1E3A8A]">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+<!-- Column 1: Profil Usaha & Logo -->
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center text-white border border-white/20">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">checkroom</span>
+</div>
+<span class="font-bold text-lg tracking-tight">Cadence Uniform Atelier</span>
+</div>
+<p class="text-sm text-gray-300 leading-relaxed">
+            Spesialis pengadaan seragam institusi pendidikan, sekolah, dan kedinasan berstandar tinggi dengan material kain premium dan presisi jahitan terbaik.
+          </p>
+<div class="flex items-center gap-3 pt-1">
+<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/10 text-gray-300 hover:text-white hover:bg-white/20 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-base">public</span>
+</span>
+<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/10 text-gray-300 hover:text-white hover:bg-white/20 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-base">chat</span>
+</span>
+<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-white/10 text-gray-300 hover:text-white hover:bg-white/20 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-base">mail</span>
+</span>
+</div>
+</div>
+<!-- Column 2: Layanan & Produk -->
+<div class="space-y-3">
+<h3 class="text-sm font-bold uppercase tracking-wider text-white">Layanan &amp; Produk</h3>
+<ul class="space-y-2 text-sm text-gray-300">
+<li><a class="hover:text-white transition-colors" href="#">Seragam Batik Kustom Sekolah</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Seragam Harian Nasional &amp; Pramuka</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Jas Almamater &amp; Blazer OSIS</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Pakaian Olahraga &amp; Atribut Lengkap</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Konsultasi Desain &amp; Sampel Kain</a></li>
+</ul>
+</div>
+<!-- Column 3: Bantuan & Info -->
+<div class="space-y-3">
+<h3 class="text-sm font-bold uppercase tracking-wider text-white">Bantuan &amp; Info</h3>
+<ul class="space-y-2 text-sm text-gray-300">
+<li><a class="hover:text-white transition-colors" href="#">Panduan Pengukuran Ukuran (Size Guide)</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Tata Cara Pemesanan Institusi</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Kebijakan Garansi &amp; Retur Ukuran</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Syarat &amp; Ketentuan Layanan</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Pusat Bantuan &amp; FAQ</a></li>
+</ul>
+</div>
+<!-- Column 4: Kontak Resmi -->
+<div class="space-y-3">
+<h3 class="text-sm font-bold uppercase tracking-wider text-white">Kontak Resmi</h3>
+<ul class="space-y-3 text-sm text-gray-300">
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-base text-gray-300 shrink-0 mt-0.5">location_on</span>
+<span>Kawasan Industri Tekstil No. 42, Bandung, Jawa Barat 40221</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-gray-300 shrink-0">call</span>
+<span>(022) 8765-4321 / 0812-3456-7890</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-gray-300 shrink-0">mail</span>
+<span>layanan@cadenceuniform.id</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-gray-300 shrink-0">schedule</span>
+<span>Senin - Sabtu: 08.00 - 17.00 WIB</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Copyright Bottom Bar -->
+<div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-3">
+<p>© 2025 Cadence Uniform Atelier. Hak Cipta Dilindungi.</p>
+<div class="flex items-center gap-4">
+<a class="hover:text-white transition-colors" href="#">Privasi</a>
+<span class="text-gray-600">•</span>
+<a class="hover:text-white transition-colors" href="#">Syarat Penggunaan</a>
+<span class="text-gray-600">•</span>
+<a class="hover:text-white transition-colors" href="#">Keamanan</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Script for OTP interaction & countdown -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const inputs = document.querySelectorAll('.otp-box');
+      
+      inputs.forEach((input, index) => {
+        input.addEventListener('input', (e) => {
+          const val = e.target.value.replace(/[^0-9]/g, '');
+          e.target.value = val ? val[0] : '';
+          if (e.target.value && index < inputs.length - 1) {
+            inputs[index + 1].focus();
+            inputs[index + 1].select();
+          }
+        });
+
+        input.addEventListener('keydown', (e) => {
+          if (e.key === 'Backspace' && !e.target.value && index > 0) {
+            inputs[index - 1].focus();
+          }
+        });
+
+        input.addEventListener('paste', (e) => {
+          e.preventDefault();
+          const pasteData = (e.clipboardData || window.clipboardData).getData('text').replace(/[^0-9]/g, '');
+          if (pasteData) {
+            for (let i = 0; i < inputs.length; i++) {
+              if (pasteData[i]) {
+                inputs[i].value = pasteData[i];
+              }
+            }
+            const focusIndex = Math.min(pasteData.length, inputs.length - 1);
+            inputs[focusIndex].focus();
+          }
+        });
+      });
+
+      // Countdown Timer Logic
+      let secondsRemaining = 52;
+      const countdownEl = document.getElementById('countdown');
+      const resendBtn = document.getElementById('btn-resend');
+
+      const interval = setInterval(() => {
+        if (secondsRemaining <= 0) {
+          clearInterval(interval);
+          if (countdownEl) countdownEl.textContent = '00:00';
+          if (resendBtn) {
+            resendBtn.removeAttribute('disabled');
+            resendBtn.classList.remove('text-[#9CA3AF]', 'cursor-not-allowed');
+            resendBtn.classList.add('text-[#1E3A8A]', 'cursor-pointer', 'hover:text-[#17245F]');
+          }
+        } else {
+          secondsRemaining--;
+          const sec = secondsRemaining < 10 ? '0' + secondsRemaining : secondsRemaining;
+          if (countdownEl) countdownEl.textContent = '00:' + sec;
+        }
+      }, 1000);
+    });
+  </script>
+</body></html>

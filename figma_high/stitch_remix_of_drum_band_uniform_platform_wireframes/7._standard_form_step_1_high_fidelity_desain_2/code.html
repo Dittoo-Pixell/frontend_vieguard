@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;font-family:'Inter',sans-serif;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline": "#757682", "outline-variant": "#E5E7EB", "primary-container": "#1E3A8A", "surface-container-lowest": "#ffffff", "surface-container-low": "#F7F9FC", "surface-container": "#eceef1", "surface-container-high": "#EAF0FF", "surface": "#F7F9FC", "on-surface": "#172033", "on-surface-variant": "#667085", "background": "#F7F9FC", "primary": "#1E3A8A", "primary-dark": "#17245F", "primary-light": "#EAF0FF", "accent-orange": "#F59E0B", "on-primary": "#ffffff", "secondary": "#4e5a98", "secondary-container": "#EAF0FF", "error": "#ba1a1a", "error-container": "#ffdad6" }, "borderRadius": { "DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" }, "spacing": { "margin": "30px", "space-lg": "30px", "space-xl": "40px", "gutter": "24px", "space-sm": "12px", "space-xs": "8px", "space-md": "20px" }, "fontFamily": { "microcopy": [ "Inter", "sans-serif" ], "body-md": [ "Inter", "sans-serif" ], "headline-xl": [ "Inter", "sans-serif" ], "label-md": [ "Inter", "sans-serif" ], "headline-lg": [ "Inter", "sans-serif" ], "body-md-bold": [ "Inter", "sans-serif" ], "label-sm": [ "Inter", "sans-serif" ] }, "boxShadow": { "card": "0 4px 16px rgba(20, 30, 60, 0.08)", "card-hover": "0 10px 25px -3px rgba(30, 58, 138, 0.12), 0 4px 6px -2px rgba(0, 0, 0, 0.05)" } } } };</script><meta content="web_standard" name="shell-type"/></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/95 backdrop-blur-md border-b border-outline-variant shadow-sm"><div class="h-20 w-full px-margin flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-sm"><img alt="Wireframe Business Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Wd6bniWesbT_uzTX3CkmaJrS377Uc4RWOc-Js4j71gNGQbzNe3lf8k-Il8NcROJ8Sd7uVCU930bdy-7TBW4bPzh1UK_71osgdaXQTqcTqQFCFJ_IMBHbXofYRJoEND4_q6wWsazf_XF5FpqH0qiLWwXsI8Ol440hcXOyusMBf11x1Yn38HzsE70Q_qgRTpMDEHjrV3J-5aMCrRGuB_M_gHBpWGppY2NboVnUv_Et8emyMPoBtNnwZypw"/><span class="font-bold text-lg text-primary tracking-tight">Nama Usaha</span></div><nav class="hidden lg:flex items-center gap-2" data-active-classes="bg-primary text-on-primary font-medium rounded-xl px-4 py-2"><a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors px-3 py-2 rounded-lg" data-path="catalog" href="#">Katalog</a><a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors px-3 py-2 rounded-lg" data-path="portfolio" href="#">Portofolio</a><a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors px-3 py-2 rounded-lg" data-path="place-order" href="#">Pesan Seragam</a><a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors px-3 py-2 rounded-lg" data-path="rental" href="#">Penyewaan</a><a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors px-3 py-2 rounded-lg" data-path="my-orders-and-rentals" href="#">Pesanan &amp; Sewa Saya</a><a class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors px-3 py-2 rounded-lg" data-path="chat" href="#">Obrolan</a></nav><div class="flex items-center gap-space-sm"><button aria-label="Notifikasi" class="w-10 h-10 flex items-center justify-center border border-outline-variant bg-surface-container-lowest hover:bg-surface-container-high text-on-surface-variant hover:text-primary rounded-xl transition-all shadow-sm" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span></button><a class="h-10 px-space-md border border-primary/20 hover:border-primary bg-primary-light hover:bg-primary hover:text-white font-semibold text-sm text-primary rounded-xl flex items-center transition-all shadow-sm" data-path="login" href="#">Masuk / Daftar</a><img alt="Profil" class="w-9 h-9 rounded-full object-cover border-2 border-outline-variant shadow-sm" src="https://lh3.googleusercontent.com/aida/AEtjO1WJ_7YUl3AXXeHpa7h40EANLVLgCkaVjcQOzpBadaKhOgIH4iTQFNBXDbma91Er7hxcOGusY01ZY5LbGmmGdJmAaf-CKv_Oy5B5QnyuZ_U_Va3OGg5G-lvyOhpaIaBQtumCvZdk2TEzE9BH6MAGz_888MYTsYGICewRm5SQn6eWMA0EgMn0W4KArJQfyOFqSvCuipTkEfTx6K6LOVzFJxAqfLE9IWD4I66QQMYcOn6NBI-jNdRsmF-3pdE"/></div></div><div class="h-10 bg-white border-t border-outline-variant w-full px-margin flex items-center shadow-xs"><div class="text-xs font-medium text-on-surface-variant flex items-center gap-2"><span class="hover:text-primary cursor-pointer transition-colors">Beranda</span><span class="text-slate-400">&gt;</span><span class="font-semibold text-primary">Pilih Paket Pemesanan</span></div></div></header><main class="w-full pt-20 flex-1 bg-background"><div class="flex flex-col w-full">
+<!-- Interactive Progress Stepper Bar -->
+<div class="w-full bg-surface-container-lowest shadow-sm mb-space-xl">
+<div class="max-w-[1400px] mx-auto px-margin py-space-lg">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md items-center">
+<!-- Step 1: Active -->
+<div class="flex items-center gap-space-md p-space-sm rounded-xl bg-surface-container-high transition-all">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary flex items-center justify-center font-headline-sm text-headline-sm shadow-sm">
+            1
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-primary-container tracking-wider uppercase">Langkah 1 (Aktif)</span>
+<span class="font-label-lg text-label-lg text-on-surface truncate">Spesifikasi Dasar &amp; Institusi</span>
+</div>
+</div>
+<!-- Step 2: Inactive -->
+<div class="flex items-center gap-space-md p-space-sm rounded-xl hover:bg-surface-container transition-all opacity-65">
+<div class="w-10 h-10 rounded-xl bg-surface-container text-on-surface-variant flex items-center justify-center font-headline-sm text-headline-sm">
+            2
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase">Langkah 2</span>
+<span class="font-label-lg text-label-lg text-on-surface truncate">Data Ukuran via Excel</span>
+</div>
+</div>
+<!-- Step 3: Inactive -->
+<div class="flex items-center gap-space-md p-space-sm rounded-xl hover:bg-surface-container transition-all opacity-65">
+<div class="w-10 h-10 rounded-xl bg-surface-container text-on-surface-variant flex items-center justify-center font-headline-sm text-headline-sm">
+            3
+          </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase">Langkah 3</span>
+<span class="font-label-lg text-label-lg text-on-surface truncate">Konfirmasi &amp; Tinjauan</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Work Area -->
+<div class="max-w-[1400px] w-full mx-auto px-margin mb-space-2xl">
+<!-- Header Title Section -->
+<div class="mb-space-xl">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed mb-space-xs font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Formulir Terstandarisasi Produksi Garment</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">
+        Formulir Pemesanan Seragam Standar - Langkah 1: Spesifikasi Dasar &amp; Identitas Institusi
+      </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-1">
+        Lengkapi detail sekolah/organisasi dan jadwal pelaksanaan acara untuk alokasi kapasitas jahit workshop.
+      </p>
+</div>
+<!-- Two-column Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left Column: Form Controls (8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm p-space-xl">
+<!-- Section Badge Inside Card -->
+<div class="flex items-center gap-space-xs pb-space-md mb-space-lg">
+<span class="material-symbols-outlined text-primary-container text-[24px]">apartment</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Data Lembaga &amp; Penanggung Jawab</h2>
+</div>
+<form class="flex flex-col gap-space-lg" id="orderFormStep1" onsubmit="event.preventDefault();">
+<!-- Nama Instansi & PIC -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface flex items-center justify-between" for="instansi">
+<span>Nama Instansi / Sekolah <span class="text-error">*</span></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-normal">Wajib</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px] pointer-events-none">school</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-xl bg-surface text-on-surface placeholder:text-on-surface-variant/60 font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest shadow-sm transition-all" id="instansi" name="instansi" placeholder="Contoh: SMA Negeri 1 Harapan Bangsa" required="" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface flex items-center justify-between" for="pic">
+<span>Penanggung Jawab / PIC <span class="text-error">*</span></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-normal">Wajib</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px] pointer-events-none">person</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-xl bg-surface text-on-surface placeholder:text-on-surface-variant/60 font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest shadow-sm transition-all" id="pic" name="pic" placeholder="Nama Lengkap Koordinator" required="" type="text"/>
+</div>
+</div>
+</div>
+<!-- Kontak & Target Tanggal Acara -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface flex items-center justify-between" for="whatsapp">
+<span>Nomor WhatsApp / Kontak Darurat <span class="text-error">*</span></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-normal">Aktif 24 Jam</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px] pointer-events-none">chat</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-xl bg-surface text-on-surface placeholder:text-on-surface-variant/60 font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest shadow-sm transition-all" id="whatsapp" name="whatsapp" placeholder="+62 812-xxxx-xxxx" required="" type="tel"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface flex items-center justify-between" for="target_date">
+<span>Target Tanggal Acara / Pemakaian <span class="text-error">*</span></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-normal">Estimasi</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px] pointer-events-none">event</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-xl bg-surface text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest shadow-sm transition-all" id="target_date" name="target_date" required="" type="date"/>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px] text-tertiary-container">info</span>
+                  Jadwal pengerjaan minimal 14 - 21 hari kalender sebelum tanggal acara.
+                </span>
+</div>
+</div>
+<!-- Jenjang Pendidikan (Interactive selectable cards) -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface">Jenjang Pendidikan / Kluster Usia <span class="text-error">*</span></span>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-space-xs" id="jenjangRadioGroup">
+<label class="cursor-pointer group flex flex-col items-center justify-center p-space-sm rounded-xl bg-surface hover:bg-surface-container-high transition-all text-center has-[:checked]:bg-primary-container has-[:checked]:text-on-primary shadow-xs">
+<input class="sr-only" name="jenjang" type="radio" value="TK"/>
+<span class="font-label-lg text-label-lg">TK / PAUD</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant group-has-[:checked]:text-primary-fixed-dim">3-6 Tahun</span>
+</label>
+<label class="cursor-pointer group flex flex-col items-center justify-center p-space-sm rounded-xl bg-surface hover:bg-surface-container-high transition-all text-center has-[:checked]:bg-primary-container has-[:checked]:text-on-primary shadow-xs">
+<input class="sr-only" name="jenjang" type="radio" value="SD"/>
+<span class="font-label-lg text-label-lg">SD / MI</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant group-has-[:checked]:text-primary-fixed-dim">7-12 Tahun</span>
+</label>
+<label class="cursor-pointer group flex flex-col items-center justify-center p-space-sm rounded-xl bg-surface hover:bg-surface-container-high transition-all text-center has-[:checked]:bg-primary-container has-[:checked]:text-on-primary shadow-xs">
+<input class="sr-only" name="jenjang" type="radio" value="SMP"/>
+<span class="font-label-lg text-label-lg">SMP / MTs</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant group-has-[:checked]:text-primary-fixed-dim">Remaja Awal</span>
+</label>
+<label class="cursor-pointer group flex flex-col items-center justify-center p-space-sm rounded-xl bg-surface hover:bg-surface-container-high transition-all text-center has-[:checked]:bg-primary-container has-[:checked]:text-on-primary shadow-xs">
+<input checked="" class="sr-only" name="jenjang" type="radio" value="SMA"/>
+<span class="font-label-lg text-label-lg">SMA / SMK</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant group-has-[:checked]:text-primary-fixed-dim">Remaja Atas</span>
+</label>
+<label class="cursor-pointer group flex flex-col items-center justify-center p-space-sm rounded-xl bg-surface hover:bg-surface-container-high transition-all text-center has-[:checked]:bg-primary-container has-[:checked]:text-on-primary shadow-xs">
+<input class="sr-only" name="jenjang" type="radio" value="Universitas"/>
+<span class="font-label-lg text-label-lg">Universitas</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant group-has-[:checked]:text-primary-fixed-dim">Mahasiswa</span>
+</label>
+<label class="cursor-pointer group flex flex-col items-center justify-center p-space-sm rounded-xl bg-surface hover:bg-surface-container-high transition-all text-center has-[:checked]:bg-primary-container has-[:checked]:text-on-primary shadow-xs">
+<input class="sr-only" name="jenjang" type="radio" value="Umum"/>
+<span class="font-label-lg text-label-lg">Umum / Korporat</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant group-has-[:checked]:text-primary-fixed-dim">Komunitas</span>
+</label>
+</div>
+</div>
+<!-- Pilihan Kategori Seragam -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-label-lg text-label-lg text-on-surface">Pilihan Kategori Seragam &amp; Varian Model <span class="text-error">*</span></span>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<label class="cursor-pointer relative flex flex-col p-space-md rounded-2xl bg-surface hover:bg-surface-container-high transition-all has-[:checked]:bg-surface-container-lowest has-[:checked]:shadow-md">
+<input checked="" class="sr-only peer" name="kategori_seragam" type="radio" value="Set Jas &amp; Celana/Rok"/>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="material-symbols-outlined text-primary-container text-[28px]">apparel</span>
+<span class="w-5 h-5 rounded-full bg-surface-container-highest peer-checked:bg-primary-container flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface mb-1">Setelan Player Inti</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Set Jas Kombinasi, Celana/Rok Formal, &amp; Selempang Bahu.</span>
+</label>
+<label class="cursor-pointer relative flex flex-col p-space-md rounded-2xl bg-surface hover:bg-surface-container-high transition-all has-[:checked]:bg-surface-container-lowest has-[:checked]:shadow-md">
+<input class="sr-only peer" name="kategori_seragam" type="radio" value="Seragam Color Guard"/>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="material-symbols-outlined text-secondary text-[28px]">flag</span>
+<span class="w-5 h-5 rounded-full bg-surface-container-highest peer-checked:bg-primary-container flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface mb-1">Kostum Color Guard</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Bahan stretch aerodinamis, detail payet ornamen, &amp; fleksibilitas gerak.</span>
+</label>
+<label class="cursor-pointer relative flex flex-col p-space-md rounded-2xl bg-surface hover:bg-surface-container-high transition-all has-[:checked]:bg-surface-container-lowest has-[:checked]:shadow-md">
+<input class="sr-only peer" name="kategori_seragam" type="radio" value="Seragam Mayoret &amp; Komandan"/>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="material-symbols-outlined text-tertiary-container text-[28px]">military_tech</span>
+<span class="w-5 h-5 rounded-full bg-surface-container-highest peer-checked:bg-primary-container flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface mb-1">Mayoret &amp; Komandan</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Model tailor eksklusif, rumbai bahu emas, &amp; aksen topi shako parade.</span>
+</label>
+</div>
+</div>
+<!-- Palet Warna Utama & Catatan Khusus -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md pt-space-xs">
+<!-- Swatches Section -->
+<div class="md:col-span-5 flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface" for="primary_color">Pilihan Warna Utama Kain</label>
+<div class="flex flex-col gap-space-xs p-space-sm bg-surface rounded-xl">
+<div class="flex items-center gap-space-xs">
+<!-- Quick Palettes -->
+<button class="w-8 h-8 rounded-full bg-[#1E3A8A] shadow-xs hover:scale-110 transition-transform ring-2 ring-primary-container" title="Biru Navy" type="button"></button>
+<button class="w-8 h-8 rounded-full bg-[#991B1B] shadow-xs hover:scale-110 transition-transform" title="Merah Marun" type="button"></button>
+<button class="w-8 h-8 rounded-full bg-[#14532D] shadow-xs hover:scale-110 transition-transform" title="Hijau Botol" type="button"></button>
+<button class="w-8 h-8 rounded-full bg-[#1F2937] shadow-xs hover:scale-110 transition-transform" title="Hitam Pekat" type="button"></button>
+<button class="w-8 h-8 rounded-full bg-[#F59E0B] shadow-xs hover:scale-110 transition-transform" title="Kuning Emas" type="button"></button>
+<button class="w-8 h-8 rounded-full bg-[#FFFFFF] shadow-xs hover:scale-110 transition-transform ring-1 ring-outline-variant" title="Putih Bersih" type="button"></button>
+</div>
+<input class="h-10 px-space-sm bg-surface-container-lowest text-on-surface rounded-lg font-body-sm text-body-sm focus:outline-none" id="primary_color" name="primary_color" placeholder="Kombinasi warna alternatif..." type="text" value="Navy Blue (#1E3A8A) &amp; Aksen Gold"/>
+</div>
+</div>
+<!-- Catatan Khusus -->
+<div class="md:col-span-7 flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface" for="catatan">Catatan Teknis / Permintaan Desain Tambahan</label>
+<textarea class="w-full p-space-sm rounded-xl bg-surface text-on-surface placeholder:text-on-surface-variant/60 font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest shadow-sm resize-none transition-all" id="catatan" name="catatan" placeholder="Tuliskan spesifikasi bordir logo instansi, posisi nama regu, preferensi furing dalam, atau ketentuan khusus seragam..." rows="3"></textarea>
+</div>
+</div>
+</form>
+</div>
+<!-- Sample Reference Preview Cards Mosaic -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="p-space-md bg-surface-container-lowest rounded-2xl shadow-sm flex items-center gap-space-md">
+<div class="w-16 h-16 rounded-xl bg-surface-container-high flex-shrink-0 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[32px]">straighten</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface">Standar Pola Ergonomis</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Pola potong dirancang leluasa untuk gerakan manuver instrumen musik brass &amp; perkusi berat.</p>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-lowest rounded-2xl shadow-sm flex items-center gap-space-md">
+<div class="w-16 h-16 rounded-xl bg-secondary-fixed flex-shrink-0 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[32px]">workspace_premium</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface">Bordir Komputer Presisi</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Kerapatan benang bordir tinggi tahan cuci berkali-kali tanpa melengkung atau sobek.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Sidebar Summary & Policy (4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg sticky top-28">
+<!-- Order Summary Card -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-sm text-label-sm tracking-wider uppercase text-on-surface-variant">Ringkasan Konfigurasi</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary-container font-label-sm text-label-sm">Langkah 1/3</span>
+</div>
+<!-- Product Image & Basic Info -->
+<div class="flex gap-space-md items-center">
+<div class="w-20 h-20 rounded-xl overflow-hidden bg-surface-container flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Uniform fabric texture closeup with gold embroidery badges and high-durability dark navy drill cloth for marching band institution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBUJobOIMQceqgrClaXqpUYQ29GkxW0mwZTh5fzEcC-bKO3liN2LpcKG8WIMAqTvzMsoHphTVGS2yCxJuYKqC7h69Y__yB6yuBJ_wgfVeYbdicpERYsJIJ75GrpaBKvf9Rd7Oty_hXn54FBP1GemVhjE8kcCupJWcOMdB7-LXaCj0DjamXnEB15F43_0ZajOdyG3GOsm0LvPGDCHFsnG6Ky9eUOqPscNTRpybuAHyn"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Paket Standar Institusi</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Produksi Konveksi Massal</span>
+<div class="mt-1 flex items-baseline gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mulai dari</span>
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold">Rp 0 / stel</span>
+</div>
+</div>
+</div>
+<!-- Live Spec Recap Checklist -->
+<div class="p-space-sm rounded-xl bg-surface flex flex-col gap-space-xs font-body-sm text-body-sm">
+<div class="flex justify-between text-on-surface-variant">
+<span>Model Terpilih:</span>
+<span class="font-label-md text-label-md text-on-surface">Setelan Jas Parade</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Estimasi Durasi:</span>
+<span class="font-label-md text-label-md text-on-surface">14 - 21 Hari Kerja</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Metode Ukur:</span>
+<span class="font-label-md text-label-md text-primary-container font-bold">Form Excel (Langkah 2)</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Garansi Revisi Jahit:</span>
+<span class="font-label-md text-label-md text-on-tertiary-container font-bold">14 Hari Pasca Kirim</span>
+</div>
+</div>
+<!-- Notice Alert Box -->
+<div class="p-space-md rounded-xl bg-surface-container-high flex gap-space-sm items-start">
+<span class="material-symbols-outlined text-primary-container text-[20px] flex-shrink-0 mt-0.5">table_view</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-primary-container">Pengisian Ukuran Badan di Langkah 2</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Anda tidak perlu memasukkan ukuran satu per satu sekarang. Di langkah selanjutnya, kami menyediakan format Excel siap unduh untuk mendata seluruh personil.
+              </p>
+</div>
+</div>
+<!-- Guarantee Badge -->
+<div class="flex items-center gap-space-xs pt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[18px] text-tertiary-container">verified_user</span>
+<span>Garansi 100% perbaikan jika ukuran tidak sesuai data form.</span>
+</div>
+</div>
+<!-- Production Workshop SLA Card -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="font-label-md text-label-md text-on-surface">Kapasitas Produksi Workshop Aktif</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full w-3/4"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Slot jahit bulan berjalan tersisa 25% kuota pemesanan reguler.</span>
+</div>
+</div>
+</div>
+<!-- Bottom Action Navigation Bar -->
+<div class="mt-space-xl p-space-md bg-surface-container-lowest rounded-2xl shadow-sm flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<a class="w-full sm:w-auto h-12 px-space-lg rounded-xl bg-surface hover:bg-surface-container text-on-surface font-label-lg text-label-lg flex items-center justify-center gap-space-xs transition-all" data-path="catalog" href="#">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+<span>Kembali ke Pilih Paket</span>
+</a>
+<div class="w-full sm:w-auto flex items-center gap-space-md">
+<span class="hidden md:inline-block font-body-sm text-body-sm text-on-surface-variant">
+          Periksa kembali isian wajib sebelum melanjutkan
+        </span>
+<button class="w-full sm:w-auto h-12 px-space-xl rounded-xl bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-space-xs shadow-md transition-all group" onclick="validateAndNext()" type="button">
+<span>Lanjut ke Langkah 2: Unggah Berkas Excel</span>
+<span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+    function validateAndNext() {
+      const instansi = document.getElementById('instansi').value.trim();
+      const pic = document.getElementById('pic').value.trim();
+      const whatsapp = document.getElementById('whatsapp').value.trim();
+      const targetDate = document.getElementById('target_date').value;
+
+      if (!instansi || !pic || !whatsapp || !targetDate) {
+        alert('Mohon lengkapi semua kolom bertanda bintang (*) sebelum melanjutkan ke formulir ukuran Excel.');
+        return;
+      }
+      
+      // In a real implementation this transitions to step 2
+      alert('Spesifikasi dasar tersimpan! Melanjutkan ke Langkah 2: Pengunggahan Data Ukuran Excel.');
+    }
+  </script>
+</div></main><footer class="w-full bg-primary-dark text-white border-t border-primary/20 mt-margin"><div class="w-full px-margin py-space-xl"><div class="grid grid-cols-1 md:grid-cols-3 gap-gutter"><div class="space-y-space-xs"><div class="text-xl font-bold text-white tracking-tight">Nama Usaha</div><p class="text-sm text-slate-300 leading-relaxed">Seragam marching band, jas almamater wisuda &amp; penyewaan instrumen resmi.</p><div class="text-xs text-slate-400 pt-space-xs">Matriks Spesifikasi Penjahitan &amp; Sistem Manajemen Sewa</div></div><div class="space-y-space-xs"><div class="text-xl font-bold text-white tracking-tight">Kontak &amp; Jam Operasional</div><ul class="space-y-1.5 text-sm text-slate-300"><li><span class="font-semibold text-white">Telepon:</span> +62 xxx-xxxx-xxxx</li><li><span class="font-semibold text-white">Email:</span> kontak@namausaha.id</li><li><span class="font-semibold text-white">Jam Kerja:</span> Senin - Sabtu: 08.00 - 17.00 WIB</li></ul></div><div class="space-y-space-xs"><div class="text-xl font-bold text-white tracking-tight">Lokasi Workshop &amp; Studio</div><p class="text-sm text-slate-300 leading-relaxed">Jl. Drum Band No. 123, Sentra Industri, Indonesia</p><div class="inline-block border border-blue-400/40 bg-white/10 px-3 py-1 rounded-xl text-xs font-semibold text-blue-200">WORKSHOP PUSAT &amp; RUANG PAMER</div></div></div><div class="mt-space-lg pt-space-md border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-space-sm text-xs text-slate-400"><div>© 2025 Nama Usaha. Hak cipta dilindungi undang-undang.</div><div>Spesifikasi Wireframe Desain v1.0</div></div></div></footer></body></html>

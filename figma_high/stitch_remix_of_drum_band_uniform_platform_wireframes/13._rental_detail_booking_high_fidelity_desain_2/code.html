@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-primary": "#b6c4ff", "inverse-on-surface": "#eff1f4", "background": "#f7f9fc", "surface-container-highest": "#e0e3e6", "surface-dim": "#d8dadd", "on-surface": "#191c1e", "on-tertiary-container": "#ef9900", "on-error-container": "#93000a", "surface-variant": "#e0e3e6", "surface-container": "#eceef1", "tertiary-fixed-dim": "#ffb95f", "error-container": "#ffdad6", "on-primary": "#ffffff", "secondary": "#4e5a98", "tertiary-fixed": "#ffddb8", "inverse-surface": "#2d3133", "on-secondary-fixed": "#051451", "on-primary-fixed": "#00164e", "primary-container": "#1e3a8a", "surface-bright": "#f7f9fc", "tertiary-container": "#5c3800", "surface-container-lowest": "#ffffff", "on-error": "#ffffff", "on-secondary": "#ffffff", "outline": "#757682", "secondary-container": "#aebaff", "surface-container-high": "#e6e8eb", "on-background": "#191c1e", "on-surface-variant": "#444651", "on-primary-fixed-variant": "#264191", "on-secondary-container": "#3d4985", "on-tertiary": "#ffffff", "primary-fixed": "#dce1ff", "error": "#ba1a1a", "secondary-fixed": "#dee1ff", "on-tertiary-fixed": "#2a1700", "surface": "#f7f9fc", "tertiary": "#3e2400", "primary-fixed-dim": "#b6c4ff", "surface-container-low": "#f2f4f7", "surface-tint": "#4059aa", "primary": "#00236f", "secondary-fixed-dim": "#b9c3ff", "on-tertiary-fixed-variant": "#653e00", "outline-variant": "#c5c5d3", "on-secondary-fixed-variant": "#36427e", "on-primary-container": "#90a8ff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-2xl": "3rem", "gutter-mobile": "1rem", "space-2xs": "0.25rem", "space-xl": "2rem", "space-md": "1rem", "space-lg": "1.5rem", "margin": "2rem", "margin-mobile": "1rem", "space-sm": "0.75rem", "gutter": "1.5rem", "space-xs": "0.5rem" }, "fontFamily": { "headline-xl": [ "Inter" ], "headline-xl-mobile": [ "Inter" ], "label-lg": [ "Inter" ], "headline-lg": [ "Inter" ], "label-sm": [ "Inter" ], "display": [ "Inter" ], "body-sm": [ "Inter" ], "body-lg": [ "Inter" ], "label-md": [ "Inter" ], "display-mobile": [ "Inter" ], "body-md": [ "Inter" ], "headline-md": [ "Inter" ], "headline-sm": [ "Inter" ] }, "fontSize": { "headline-xl": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "headline-xl-mobile": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" } ], "label-lg": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" } ], "headline-lg": [ "28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "label-sm": [ "11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600" } ], "display": [ "48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "body-sm": [ "12px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "400" } ], "body-lg": [ "16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" } ], "label-md": [ "12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" } ], "display-mobile": [ "36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" } ], "body-md": [ "14px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" } ], "headline-md": [ "22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "headline-sm": [ "18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" } ] } } } }</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-[1440px] mx-auto px-margin flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-lg"><a class="font-headline-md text-headline-md text-primary tracking-tight font-bold shrink-0" data-path="beranda" href="#">Nama Usaha</a><nav class="hidden xl:flex items-center gap-space-xs" data-active-classes="bg-surface-container-high text-primary font-bold rounded-lg"><a class="px-space-sm py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="beranda" href="#">Beranda</a><a class="px-space-sm py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="katalog" href="#">Katalog</a><a class="px-space-sm py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="portofolio" href="#">Portofolio</a><a class="px-space-sm py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="pesan-seragam" href="#">Pesan Seragam</a><a aria-current="page" class="px-space-sm py-space-xs transition-colors bg-surface-container-high text-primary font-bold rounded-lg" data-path="penyewaan" href="#">Penyewaan</a><a class="px-space-sm py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="pesanan-dan-sewa-saya" href="#">Pesanan &amp; Sewa Saya</a><a class="px-space-sm py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="obrolan-konsultasi" href="#">Obrolan</a></nav></div><div class="flex items-center gap-space-md"><button aria-label="Notifikasi" class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors relative" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error"></span></button><a class="px-space-lg py-space-xs rounded-xl bg-primary-container text-on-primary font-label-lg text-label-lg hover:bg-primary transition-colors shadow-[0_4px_16px_rgba(20,30,60,0.08)]" data-path="masuk-atau-daftar" href="#">Masuk / Daftar</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background min-h-screen"><div class="flex flex-col w-full">
+<div class="w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin py-space-xl flex flex-col gap-space-xl">
+<!-- Breadcrumb Navigation -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<a class="hover:text-primary transition-colors flex items-center gap-1" data-path="beranda" href="#">
+<span class="material-symbols-outlined text-[16px]">home</span>
+<span>Beranda</span>
+</a>
+<span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span>
+<a class="hover:text-primary transition-colors" data-path="penyewaan" href="#">
+        Katalog Sewa
+      </a>
+<span class="material-symbols-outlined text-[14px] text-outline-variant">chevron_right</span>
+<span class="text-on-surface font-label-md text-label-md">Detail Armada &amp; Booking</span>
+</nav>
+<!-- Main Content 2-Column Split Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- LEFT COLUMN: Product Imagery & Included Components Specs (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-xl">
+<!-- Gallery Container -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-[0_4px_16px_rgba(20,30,60,0.08)] flex flex-col gap-space-md">
+<!-- Main Hero Image Frame -->
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container flex items-center justify-center group">
+<img alt="Seragam Marching Band Lengkap SD/SMP" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="High-detail professional photography of royal navy blue marching band parade uniform with polished gold trims, epaulets, brass buttons, displayed on tailored sartorial mannequin inside clean architectural studio lighting with soft indigo ambient shadows." id="main-product-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCAe43wxsEmGQdyCLlqGeLfiWFJq-DfvzTv980VXkEkdBu9vbNr3CGhK3CCVLGDVIL0x2ohY2ZmiqZS8q-C9VJytbr0uerefYcT7LeUN0EVNYTC1vo0yKvdvaiQJ2dC_HJxColN2-FHOcVQLIgVTFx3fdCoLG2KrN8PbguUPkOPb1oXPefcnYiOPZbbn9RH0-Ye7-c2gMumFNNzKmoyWfrrKbguLqxxvcY8Xugeg__HmoaLmhtTA96IQ"/>
+<!-- Badges Floating Overlay -->
+<div class="absolute top-4 left-4 flex flex-wrap gap-2">
+<span class="bg-primary-container/95 backdrop-blur-sm text-on-primary font-label-sm text-label-sm px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed animate-pulse"></span>
+                Tersedia untuk Disewa
+              </span>
+<span class="bg-surface-container-lowest/90 backdrop-blur-sm text-on-surface-variant font-label-sm text-label-sm px-3 py-1.5 rounded-full shadow-sm">
+                Kode Armada: ARM-SD01
+              </span>
+</div>
+<div class="absolute bottom-4 right-4">
+<span class="bg-surface-container-lowest/90 backdrop-blur-sm text-primary font-label-md text-label-md px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+                Set Lengkap Standard PDBI
+              </span>
+</div>
+</div>
+<!-- Thumbnail Carousel -->
+<div class="grid grid-cols-4 gap-space-xs">
+<button class="thumb-btn ring-2 ring-primary-container rounded-xl overflow-hidden aspect-[4/3] bg-surface-container focus:outline-none transition-all" onclick="switchThumb(0)" type="button">
+<img alt="Tampak Depan Jas" class="w-full h-full object-cover" data-alt="Front view angle of full marching band tunic in navy blue drill fabric with golden lace accents and pristine gold metal buttons." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN7XQG8iqMdnv7aZmXRHdop8J6_V1eZbslF-DQKKn8fo20-bpdSHOfUCHcalLfTIyH8cV1XXZxUhh8VFJ-8LNsR1lQpdCd7jJJhxCwuKKPMudlDfNM2JyoqNKSanuqatYBRt1LLhPd0KB6jH8w8e9tHSbpEbhIkpkQYi6JR9NiINsABb1aBiiOUR5-nxspnNNWfO-8CLaaidnjKxvXWssu1Kjamjy303vFgDgLZ9qIQ9ipG1kc-mGm5Q"/>
+</button>
+<button class="thumb-btn ring-0 hover:opacity-90 rounded-xl overflow-hidden aspect-[4/3] bg-surface-container focus:outline-none transition-all" onclick="switchThumb(1)" type="button">
+<img alt="Topi Shako dan Plume" class="w-full h-full object-cover" data-alt="Detailed macro view of marching band shako hat with white plume feather and brass crest insignia resting on tailored fabric." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjButwYPUCFyZt5MBTqqk9Q42uDKbBIyHcDCz1h9IwmQgoRVLhMzA7WXIQC-Aa3mm5EmfP2VPX3AJEbZS1ekumRaTBhXBRTGl5ggP1SNTnIL9OtFYjsOk7P7FCtMsYCb9uLJ1HUvYr54GLp5REA6QbSkAIiR0GpGwlTSSGoZPYN3uOmQLMzsua8nJRo28Tk2Pjdqx2jaV5GWzCUspOCAuZqibtXrPBtGCdkefQadRiG7BUoUs2wa2dMQ"/>
+</button>
+<button class="thumb-btn ring-0 hover:opacity-90 rounded-xl overflow-hidden aspect-[4/3] bg-surface-container focus:outline-none transition-all" onclick="switchThumb(2)" type="button">
+<img alt="Setelan Celana dan Aksesoris" class="w-full h-full object-cover" data-alt="Full squad uniform ensemble display including formal trousers with gold side stripes, parade gloves, and sterile wardrobe garment bags." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiQLZht99ItlJt-ZXI-EvbqH7ppG01DAKGstSADsdkdLWWyfdbds31GI3f-Vu50JCdESrvpz60mwqRgeC9qK60Bvpl1ctd99IVrWoXn5gqXvPciPbWkTQgCBtZkeJ7RZ8zL1qgBP1_dOB03NLoW7eMaFAfx_CZkRpnPW4_hgB3K68GYcSNMOqE9_xPKPu_4jrUMoN_eHaCVplmr7XqHRZOtkLmv-YiiC4UfFZ5JhRS3dHEekmVNMqIrA"/>
+</button>
+<button class="thumb-btn ring-0 hover:opacity-90 rounded-xl overflow-hidden aspect-[4/3] bg-surface-container focus:outline-none transition-all" onclick="switchThumb(3)" type="button">
+<img alt="Pengepakan Steril Kargo" class="w-full h-full object-cover" data-alt="Industrial hygiene steam sanitation packaging process of marching band uniforms hung on mobile rolling garment racks in clean warehouse." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWwkO_4ZCMyBhCuijVBljpY8srYtVCQFJgc0JZfp69xJUlAO0kCaOqeTLKJQ2lfNjMYHZJZPj8PPwWsSzPQ73YUGNNPriKL8HShgUim0Gi9GM-Gme4o4VDoV4YbtVCNYVusyOLQFXDrVuzGYhFva3TH9ReZ1h5bouRz8E2T3a6WooBqmwNQ8G-m20yGvwO-2bpxMC62_L2XCocYSna3tYzOi_VtLdIX0KDkMYi_Bkx_Uodd1_tft6q_g"/>
+</button>
+</div>
+</div>
+<!-- Product Identity & Pricing Header -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-[0_4px_16px_rgba(20,30,60,0.08)] flex flex-col gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+                Kategori: Set Lengkap
+              </span>
+<span class="text-outline text-body-sm font-body-sm">•</span>
+<span class="text-on-surface-variant text-body-sm font-body-sm">Armada Siap Pakai 150+ Stel</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight font-bold">
+              Paket Seragam Lengkap Marching Band SD/SMP
+            </h1>
+</div>
+<div class="flex flex-wrap items-baseline gap-space-sm bg-surface-container-low p-space-md rounded-xl">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-xl text-headline-xl text-primary font-bold">Rp 65.000</span>
+<span class="font-body-md text-body-md text-on-surface-variant">/ stel / hari</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">redeem</span>
+              Diskon khusus durasi sewa &gt; 3 hari (-15%)
+            </div>
+</div>
+</div>
+<!-- Tabbed Information Container -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-[0_4px_16px_rgba(20,30,60,0.08)] overflow-hidden">
+<!-- Tab Bar -->
+<div class="flex border-b border-surface-container-highest bg-surface-container-low px-space-md pt-space-xs gap-space-xs">
+<button class="tab-button px-space-md py-space-sm font-label-lg text-label-lg text-primary border-b-2 border-primary font-bold flex items-center gap-2 transition-all" id="tab-btn-1" onclick="switchTab(1)" type="button">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+              Komponen yang Didapat
+            </button>
+<button class="tab-button px-space-md py-space-sm font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface border-b-2 border-transparent flex items-center gap-2 transition-all" id="tab-btn-2" onclick="switchTab(2)" type="button">
+<span class="material-symbols-outlined text-[18px]">straighten</span>
+              Panduan Ukuran Armada
+            </button>
+<button class="tab-button px-space-md py-space-sm font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface border-b-2 border-transparent flex items-center gap-2 transition-all" id="tab-btn-3" onclick="switchTab(3)" type="button">
+<span class="material-symbols-outlined text-[18px]">sanitizer</span>
+              Protokol Sanitasi
+            </button>
+</div>
+<!-- Tab Content Panes -->
+<div class="p-space-lg">
+<!-- Tab 1: Komponen yang Didapat -->
+<div class="tab-pane flex flex-col gap-space-md" id="tab-pane-1">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Setiap 1 stel peminjaman armada dirancang terstandar dan higienis, lengkap dengan ornamen performa panggung profesional tanpa perlu biaya sewa aksesoris terpisah.
+              </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div class="flex items-start gap-space-xs p-space-sm rounded-xl bg-surface-container-low">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Jas Tunic Drill Lis Emas</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Bahan American Drill tebal berfuring, kerah tegak kancing kuningan.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-xs p-space-sm rounded-xl bg-surface-container-low">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Celana/Rok Formal</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Model lurus berlis emas samping, pinggang semi-karet adaptif.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-xs p-space-sm rounded-xl bg-surface-container-low">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Topi Shako + Plume Bulu</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Struktur fiber kokoh lapis vinyl, emblem garuda, plume steril.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-xs p-space-sm rounded-xl bg-surface-container-low">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Sarung Tangan Parade</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Katun stretch putih pekat berdaya cengkeram stik drum.</p>
+</div>
+</div>
+<div class="sm:col-span-2 flex items-start gap-space-xs p-space-sm rounded-xl bg-surface-container-low">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Gantungan &amp; Garment Bag Steril</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tiap stel tersimpan terpisah pada tas beresleting transparan anti-debu dengan label nomor stel.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Tab 2: Panduan Ukuran Armada -->
+<div class="tab-pane hidden flex flex-col gap-space-md" id="tab-pane-2">
+<div class="p-space-sm rounded-xl bg-surface-container-high text-on-surface font-body-sm text-body-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">info</span>
+<span>Armada sewa dirancang dengan teknologi flexi-waistband (toleransi renggang pinggang ±4 cm per ukuran).</span>
+</div>
+<div class="overflow-x-auto rounded-xl bg-surface-container-low">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead class="bg-surface-container text-on-surface font-label-md text-label-md uppercase tracking-wider">
+<tr>
+<th class="py-3 px-4">Ukuran</th>
+<th class="py-3 px-4">Lingkar Dada (cm)</th>
+<th class="py-3 px-4">Panjang Jas (cm)</th>
+<th class="py-3 px-4">Lingkar Pinggang (cm)</th>
+<th class="py-3 px-4">Panjang Celana (cm)</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-highest text-on-surface-variant">
+<tr>
+<td class="py-3 px-4 font-bold text-on-surface">S (SD Kecil)</td>
+<td class="py-3 px-4">76 - 80</td>
+<td class="py-3 px-4">52</td>
+<td class="py-3 px-4">58 - 66</td>
+<td class="py-3 px-4">76</td>
+</tr>
+<tr>
+<td class="py-3 px-4 font-bold text-on-surface">M (SD Besar / SMP)</td>
+<td class="py-3 px-4">82 - 86</td>
+<td class="py-3 px-4">56</td>
+<td class="py-3 px-4">64 - 72</td>
+<td class="py-3 px-4">82</td>
+</tr>
+<tr>
+<td class="py-3 px-4 font-bold text-on-surface">L (SMP Standar)</td>
+<td class="py-3 px-4">88 - 92</td>
+<td class="py-3 px-4">60</td>
+<td class="py-3 px-4">70 - 78</td>
+<td class="py-3 px-4">88</td>
+</tr>
+<tr>
+<td class="py-3 px-4 font-bold text-on-surface">XL (SMP Besar)</td>
+<td class="py-3 px-4">94 - 98</td>
+<td class="py-3 px-4">64</td>
+<td class="py-3 px-4">76 - 84</td>
+<td class="py-3 px-4">94</td>
+</tr>
+<tr>
+<td class="py-3 px-4 font-bold text-on-surface">XXL (Tinggi / Khusus)</td>
+<td class="py-3 px-4">100 - 106</td>
+<td class="py-3 px-4">68</td>
+<td class="py-3 px-4">82 - 90</td>
+<td class="py-3 px-4">98</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Tab 3: Protokol Sanitasi -->
+<div class="tab-pane hidden flex flex-col gap-space-md" id="tab-pane-3">
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm text-center">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col items-center gap-2">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">thermostat</span>
+</div>
+<p class="font-label-lg text-label-lg text-on-surface">Sterilisasi Uap 100°C</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Penyetrikaan uap tekanan tinggi eliminasi 99.9% bakteri &amp; tungau.</p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col items-center gap-2">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">dry_cleaning</span>
+</div>
+<p class="font-label-lg text-label-lg text-on-surface">Dry Cleaning Premium</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pencucian ramah serat kain tanpa bau menyengat ataupun alergen.</p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col items-center gap-2">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<p class="font-label-lg text-label-lg text-on-surface">Segel Kargo Steril</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Disegel dalam box kontainer khusus sebelum serah terima logistik.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Booking Configuration & Price Calculation Card (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-md sticky top-24">
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-[0_8px_24px_rgba(20,30,60,0.12)] flex flex-col gap-space-lg">
+<!-- Card Title & Header -->
+<div class="flex items-center justify-between pb-space-xs border-b border-surface-container-highest">
+<div class="flex items-center gap-space-xs">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">calendar_month</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">
+                  Pemesanan Tanggal &amp; Armada Sewa
+                </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Konfigurasi jadwal dan kuota seragam</p>
+</div>
+</div>
+</div>
+<!-- Configuration Form -->
+<form class="flex flex-col gap-space-md" id="booking-form" onsubmit="event.preventDefault();">
+<!-- Dates Group -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="start-date">Tanggal Mulai Sewa</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px] pointer-events-none">calendar_today</span>
+<input class="w-full h-11 pl-10 pr-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary" id="start-date" onchange="calculateRental()" type="date" value="2025-11-10"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="end-date">Tanggal Pengembalian</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[18px] pointer-events-none">event_repeat</span>
+<input class="w-full h-11 pl-10 pr-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary" id="end-date" onchange="calculateRental()" type="date" value="2025-11-14"/>
+</div>
+</div>
+</div>
+<!-- Duration Badge Bar -->
+<div class="flex items-center justify-between px-space-md py-space-xs rounded-xl bg-secondary-fixed text-on-secondary-fixed">
+<span class="font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+                Durasi Sewa Terhitung:
+              </span>
+<span class="font-headline-sm text-headline-sm font-bold" id="duration-badge">4 Hari</span>
+</div>
+<!-- Quantity & Institution Type Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<!-- Quantity Input -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="uniform-qty">Jumlah Stel Dibutuhkan</label>
+<div class="relative flex items-center">
+<input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary font-bold" id="uniform-qty" max="150" min="10" oninput="calculateRental()" type="number" value="35"/>
+<span class="absolute right-3 font-label-md text-label-md text-on-surface-variant pointer-events-none">Stel</span>
+</div>
+</div>
+<!-- Institution Selector -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface" for="institution-type">Jenjang Institusi</label>
+<div class="relative flex items-center">
+<select class="w-full h-11 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary appearance-none cursor-pointer" id="institution-type">
+<option value="SD">Sekolah Dasar (SD)</option>
+<option selected="" value="SMP">Sekolah Menengah Pertama (SMP)</option>
+<option value="SMA">Sekolah Menengah Atas (SMA)</option>
+<option value="UMUM">Komunitas / Umum</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 text-outline text-[20px] pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Price Breakdown Box -->
+<div class="flex flex-col gap-space-xs p-space-md rounded-xl bg-surface-container-low mt-2">
+<span class="font-label-md text-label-md text-on-surface font-bold uppercase tracking-wider pb-1">
+                Rincian Kalkulasi Biaya
+              </span>
+<div class="flex justify-between items-center text-body-sm font-body-sm text-on-surface-variant">
+<span>Biaya Satuan Sewa:</span>
+<span class="text-on-surface font-semibold" id="rate-per-unit">Rp 65.000 / stel / hari</span>
+</div>
+<div class="flex justify-between items-center text-body-sm font-body-sm text-on-surface-variant">
+<span id="label-calc-base">Subtotal (4 Hari × 35 Stel):</span>
+<span class="text-on-surface font-semibold" id="val-subtotal">Rp 9.100.000</span>
+</div>
+<div class="flex justify-between items-center text-body-sm font-body-sm text-tertiary-fixed-dim">
+<span>Diskon Durasi &gt; 3 Hari (-15%):</span>
+<span class="font-semibold text-tertiary-fixed-dim" id="val-discount">-Rp 1.365.000</span>
+</div>
+<div class="flex justify-between items-start text-body-sm font-body-sm text-on-surface-variant">
+<div class="flex flex-col">
+<span>Jaminan Keamanan:</span>
+<span class="text-[10px] text-primary font-bold">Opsi Bebas Deposit via SPK</span>
+</div>
+<span class="text-on-surface font-semibold text-right">SPK Kedinasan / Rp 0</span>
+</div>
+<div class="flex justify-between items-center text-body-sm font-body-sm text-on-surface-variant">
+<span>Ongkos Kirim Antar-Jemput:</span>
+<span class="text-on-surface-variant italic">Dihitung saat konfirmasi</span>
+</div>
+<!-- Total Divider -->
+<div class="pt-space-xs mt- space-xs border-t border-surface-container-highest flex justify-between items-baseline">
+<div>
+<span class="font-label-lg text-label-lg text-on-surface font-bold block">Total Estimasi Sewa:</span>
+<span class="text-[11px] text-on-surface-variant">Termasuk PPN &amp; Sterilisasi</span>
+</div>
+<span class="font-headline-md text-headline-md text-primary font-bold" id="val-total">Rp 7.735.000</span>
+</div>
+</div>
+<!-- Official Institution Guarantee Callout Box -->
+<div class="p-space-sm rounded-xl bg-tertiary-fixed/30 flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-container text-[20px] shrink-0 mt-0.5">policy</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-snug">
+<strong>Kebijakan Sekolah / Dinas:</strong> Institusi resmi dapat menggunakan Surat Rekomendasi Resmi / SPK Kepala Sekolah bertanda tangan basah sebagai pengganti deposit uang tunai.
+              </p>
+</div>
+<!-- Action Buttons Deck -->
+<div class="flex flex-col gap-space-xs mt-2">
+<button class="w-full h-12 rounded-xl bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 transition-colors shadow-[0_4px_16px_rgba(20,30,60,0.12)]" type="button">
+<span class="material-symbols-outlined text-[20px]">book_online</span>
+<span>Lanjutkan Booking &amp; Reservasi Tanggal</span>
+</button>
+<button class="w-full h-11 rounded-xl bg-surface-container hover:bg-surface-container-high text-primary font-label-lg text-label-lg font-semibold flex items-center justify-center gap-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">forum</span>
+<span>Konsultasi Ketersediaan Armada via Chat</span>
+</button>
+</div>
+<p class="text-center font-body-sm text-body-sm text-on-surface-variant">
+              Unit armada diproteksi jadwal maksimal 24 jam setelah reservasi dibuat.
+            </p>
+</form>
+</div>
+<!-- Trust & Security Ribbon -->
+<div class="p-space-md rounded-2xl bg-surface-container-lowest shadow-[0_4px_16px_rgba(20,30,60,0.06)] flex items-center justify-around text-center">
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[24px]">verified</span>
+<span class="font-label-sm text-label-sm text-on-surface">Kualitas PDBI</span>
+</div>
+<div class="h-8 w-px bg-surface-container-highest"></div>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[24px]">local_shipping</span>
+<span class="font-label-sm text-label-sm text-on-surface">Antar Tepat Waktu</span>
+</div>
+<div class="h-8 w-px bg-surface-container-highest"></div>
+<div class="flex flex-col items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[24px]">support_agent</span>
+<span class="font-label-sm text-label-sm text-on-surface">Pendamping Fitting</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Inline Script for Tab Navigation and Price Dynamic Calculation -->
+<script>
+    function switchTab(tabIndex) {
+      // Toggle button styles
+      for (let i = 1; i <= 3; i++) {
+        const btn = document.getElementById('tab-btn-' + i);
+        const pane = document.getElementById('tab-pane-' + i);
+        if (i === tabIndex) {
+          btn.className = 'tab-button px-space-md py-space-sm font-label-lg text-label-lg text-primary border-b-2 border-primary font-bold flex items-center gap-2 transition-all';
+          pane.classList.remove('hidden');
+        } else {
+          btn.className = 'tab-button px-space-md py-space-sm font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface border-b-2 border-transparent flex items-center gap-2 transition-all';
+          pane.classList.add('hidden');
+        }
+      }
+    }
+
+    function switchThumb(index) {
+      const thumbs = document.querySelectorAll('.thumb-btn');
+      thumbs.forEach((t, idx) => {
+        if (idx === index) {
+          t.classList.add('ring-2', 'ring-primary-container');
+          t.classList.remove('ring-0');
+        } else {
+          t.classList.remove('ring-2', 'ring-primary-container');
+          t.classList.add('ring-0');
+        }
+      });
+    }
+
+    function calculateRental() {
+      const startVal = document.getElementById('start-date').value;
+      const endVal = document.getElementById('end-date').value;
+      const qty = parseInt(document.getElementById('uniform-qty').value, 10) || 1;
+
+      let days = 1;
+      if (startVal && endVal) {
+        const startDate = new Date(startVal);
+        const endDate = new Date(endVal);
+        const diffTime = endDate - startDate;
+        days = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        if (days <= 0) days = 1;
+      }
+
+      document.getElementById('duration-badge').innerText = days + ' Hari';
+
+      const unitPrice = 65000;
+      const grossSubtotal = unitPrice * qty * days;
+
+      let discount = 0;
+      if (days > 3) {
+        discount = Math.round(grossSubtotal * 0.15);
+      }
+
+      const total = grossSubtotal - discount;
+
+      const formatIDR = (num) => 'Rp ' + num.toLocaleString('id-ID');
+
+      document.getElementById('label-calc-base').innerText = 'Subtotal (' + days + ' Hari × ' + qty + ' Stel):';
+      document.getElementById('val-subtotal').innerText = formatIDR(grossSubtotal);
+      document.getElementById('val-discount').innerText = discount > 0 ? '-' + formatIDR(discount) : 'Rp 0';
+      document.getElementById('val-total').innerText = formatIDR(total);
+    }
+  </script>
+</div></main><footer class="w-full bg-primary text-on-primary shadow-[0_-4px_16px_rgba(20,30,60,0.08)]"><div class="max-w-[1440px] mx-auto px-margin py-space-2xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl"><div class="flex flex-col gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-primary font-bold">Nama Usaha</span><p class="font-body-md text-body-md text-primary-fixed-dim leading-relaxed">Solusi pengadaan dan penjahitan seragam profesional serta layanan penyewaan busana berkualitas tinggi dengan standar pengerjaan terpercaya.</p></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-on-primary font-bold uppercase tracking-wider">Layanan</span><a class="font-body-md text-body-md text-primary-fixed-dim hover:text-on-primary transition-colors" data-path="katalog" href="#">Katalog Produk</a><a class="font-body-md text-body-md text-primary-fixed-dim hover:text-on-primary transition-colors" data-path="pesan-seragam" href="#">Pesan Jahit Seragam</a><a class="font-body-md text-body-md text-primary-fixed-dim hover:text-on-primary transition-colors" data-path="penyewaan" href="#">Penyewaan Busana</a><a class="font-body-md text-body-md text-primary-fixed-dim hover:text-on-primary transition-colors" data-path="portofolio" href="#">Galeri Portofolio</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-on-primary font-bold uppercase tracking-wider">Bantuan &amp; Info</span><a class="font-body-md text-body-md text-primary-fixed-dim hover:text-on-primary transition-colors" data-path="pesanan-dan-sewa-saya" href="#">Status Pesanan &amp; Sewa</a><a class="font-body-md text-body-md text-primary-fixed-dim hover:text-on-primary transition-colors" data-path="obrolan-konsultasi" href="#">Pusat Konsultasi Desain</a><a class="font-body-md text-body-md text-primary-fixed-dim hover:text-on-primary transition-colors" data-path="kebijakan-privasi" href="#">Kebijakan Penyewaan</a><a class="font-body-md text-body-md text-primary-fixed-dim hover:text-on-primary transition-colors" data-path="syarat-dan-ketentuan" href="#">Syarat &amp; Ketentuan</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-lg text-label-lg text-on-primary font-bold uppercase tracking-wider">Hubungi Kami</span><div class="flex items-center gap-space-xs text-primary-fixed-dim font-body-md text-body-md"><span class="material-symbols-outlined text-[20px]">mail</span><span>halo@namausaha.co.id</span></div><div class="flex items-center gap-space-xs text-primary-fixed-dim font-body-md text-body-md"><span class="material-symbols-outlined text-[20px]">call</span><span>+62 21 5550 1234</span></div><div class="flex items-center gap-space-xs text-primary-fixed-dim font-body-md text-body-md"><span class="material-symbols-outlined text-[20px]">location_on</span><span>Jakarta, Indonesia</span></div></div></div><div class="border-t border-primary-container/40"><div class="max-w-[1440px] mx-auto px-margin py-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm text-primary-fixed-dim font-body-sm text-body-sm"><span>© 2025 Nama Usaha. Hak Cipta Dilindungi.</span><span>Dibuat untuk profesionalisme dan efisiensi manajemen garmen.</span></div></div></footer></body></html>

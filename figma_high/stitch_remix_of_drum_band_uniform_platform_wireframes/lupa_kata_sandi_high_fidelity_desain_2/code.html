@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lupa Kata Sandi - Cadence Uniform Atelier</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#1E3A8A",
+            "primary-dark": "#17245F",
+            secondary: "#4E5A98",
+            background: "#F7F9FC",
+            surface: "#FFFFFF",
+            "border-ui": "#E5E7EB",
+            "on-surface": "#191C1E",
+            "on-surface-variant": "#64748B",
+            "brand-light": "#EAF0FF",
+            "brand-border": "#BFDBFE"
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"]
+          },
+          boxShadow: {
+            card: "0 4px 16px rgba(20, 30, 60, 0.08)",
+            subtle: "0 1px 3px rgba(0, 0, 0, 0.05)"
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter', sans-serif;
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#F7F9FC] text-[#191C1E] min-h-screen flex flex-col antialiased">
+<!-- TOP NAVBAR -->
+<header class="w-full bg-white border-b border-[#E5E7EB] sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-3.5 flex items-center justify-between">
+<!-- Logo Kiri -->
+<a class="flex items-center gap-3 group" href="#">
+<div class="w-10 h-10 rounded-xl bg-[#1E3A8A] flex items-center justify-center text-white shadow-sm transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-2xl">military_tech</span>
+</div>
+<div class="flex flex-col">
+<span class="font-bold text-lg leading-tight text-[#17245F] tracking-tight">Cadence</span>
+<span class="text-[11px] font-semibold tracking-wider uppercase text-slate-500">Uniform Atelier</span>
+</div>
+</a>
+<!-- Menu Tengah -->
+<nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+<a class="hover:text-[#1E3A8A] transition-colors" href="#">Beranda</a>
+<a class="hover:text-[#1E3A8A] transition-colors" href="#">Katalog</a>
+<a class="hover:text-[#1E3A8A] transition-colors" href="#">Portofolio</a>
+<a class="hover:text-[#1E3A8A] transition-colors" href="#">Bantuan</a>
+</nav>
+<!-- CTA Kanan -->
+<div class="flex items-center gap-3">
+<a class="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold text-[#1E3A8A] bg-[#EAF0FF] hover:bg-blue-100 rounded-lg transition-colors" href="#">
+          Masuk / Daftar
+        </a>
+</div>
+</div>
+</header>
+<!-- MAIN CONTENT AREA -->
+<main class="flex-1 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+<div class="w-full max-w-[500px]">
+<!-- Kartu Pemulihan Kata Sandi -->
+<div class="bg-white rounded-2xl border border-[#E5E7EB] shadow-[0_4px_16px_rgba(20,30,60,0.08)] p-8 sm:p-10 transition-all duration-300">
+<!-- Header Kartu -->
+<div class="text-center mb-8">
+<!-- Icon & Eyebrow -->
+<div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[#EAF0FF] text-[#1E3A8A] mb-4">
+<span class="material-symbols-outlined text-3xl">lock_reset</span>
+</div>
+<div class="inline-block px-3 py-1 rounded-full bg-[#EAF0FF] text-[#1E3A8A] text-[11px] font-bold tracking-wider uppercase mb-2">
+            Pemulihan Kredensial Akun
+          </div>
+<h1 class="text-2xl sm:text-[26px] font-bold text-[#17245F] tracking-tight mb-2">
+            Lupa Kata Sandi?
+          </h1>
+<p class="text-sm text-slate-600 leading-relaxed max-w-sm mx-auto">
+            Masukkan alamat email resmi atau nomor telepon instansi yang terdaftar. Kami akan mengirimkan tautan dan kode verifikasi untuk mengatur ulang kata sandi Anda.
+          </p>
+</div>
+<!-- Form Pemulihan -->
+<form class="space-y-5" id="reset-password-form" onsubmit="event.preventDefault(); handleSubmit();">
+<div>
+<label class="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-2" for="identifier-input">
+              Alamat Email atau Nomor WhatsApp Instansi <span class="text-red-500">*</span>
+</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xl pointer-events-none">
+                alternate_email
+              </span>
+<input class="w-full h-12 pl-11 pr-4 bg-white text-slate-900 placeholder:text-slate-400 text-sm rounded-[11px] border border-[#E5E7EB] focus:outline-none focus:border-[#1E3A8A] focus:ring-4 focus:ring-[#EAF0FF] transition-all" id="identifier-input" placeholder="contoh: admin@marchingband.sch.id / 08123456789" required="" type="text"/>
+</div>
+<p class="mt-2 text-xs text-slate-500 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-slate-400">info</span>
+              Pastikan kontak aktif untuk menerima tautan pemulihan instan.
+            </p>
+</div>
+<!-- Tombol Kirim Kode Verifikasi -->
+<button class="w-full h-12 bg-[#1E3A8A] hover:bg-[#17245F] text-white font-semibold text-sm rounded-[11px] transition-colors duration-200 shadow-sm flex items-center justify-center gap-2 group cursor-pointer" id="btn-submit" type="submit">
+<span>Kirim Kode Verifikasi</span>
+<span class="material-symbols-outlined text-lg transition-transform duration-200 group-hover:translate-x-1">
+              arrow_forward
+            </span>
+</button>
+</form>
+<!-- Feedback Alert Sukses -->
+<div class="hidden mt-6 p-4 rounded-xl bg-green-50 border border-green-200 text-green-800 flex items-start gap-3 transition-all duration-300" id="feedback-alert">
+<span class="material-symbols-outlined text-green-600 text-xl shrink-0 mt-0.5">check_circle</span>
+<div class="text-xs leading-relaxed">
+<p class="font-semibold text-green-900 text-sm">Instruksi Berhasil Dikirim!</p>
+<p class="mt-0.5">Silakan periksa kotak masuk email atau pesan WhatsApp Anda dalam kurun waktu 5 menit ke depan.</p>
+</div>
+</div>
+<!-- Info Box Bantuan Instansi -->
+<div class="mt-6 p-4 rounded-xl bg-[#EAF0FF] border border-[#BFDBFE] flex items-start gap-3.5">
+<div class="w-8 h-8 rounded-lg bg-blue-100 text-[#1E3A8A] flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-lg">verified_user</span>
+</div>
+<div class="text-xs text-slate-700 leading-relaxed">
+<span class="font-bold text-[#17245F] block mb-0.5">Kendala Akun Lembaga Musik?</span>
+            Jika email resmi unit drumband atau marching band Anda sudah tidak aktif, hubungi Helpdesk Produksi Konveksi via WhatsApp resmi bengkel untuk verifikasi manual.
+          </div>
+</div>
+<!-- Navigasi Bawah Kartu -->
+<div class="mt-8 pt-6 border-t border-[#E5E7EB] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+<a class="inline-flex items-center gap-1.5 font-semibold text-[#1E3A8A] hover:text-[#17245F] transition-colors" href="#">
+<span class="material-symbols-outlined text-base">arrow_back</span>
+<span>Kembali ke Halaman Masuk</span>
+</a>
+<a class="inline-flex items-center gap-1 text-slate-600 hover:text-slate-900 transition-colors" href="#">
+<span class="material-symbols-outlined text-base text-slate-400">support_agent</span>
+<span>Hubungi Pusat Bantuan</span>
+</a>
+</div>
+</div>
+<!-- Keamanan Catatan Bawah -->
+<div class="mt-6 text-center text-xs text-slate-500 flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-slate-400">lock</span>
+<span>Sistem Enkripsi Terproteksi • Portal Khusus Klien &amp; Instansi Resmi</span>
+</div>
+</div>
+</main>
+<!-- FOOTER -->
+<footer class="bg-[#17245F] text-slate-300 text-sm mt-auto border-t border-blue-900/50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+<!-- Kolom Profil Usaha / Logo -->
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-white text-[#17245F] flex items-center justify-center font-bold shadow-md">
+<span class="material-symbols-outlined text-2xl">military_tech</span>
+</div>
+<div>
+<span class="text-white font-bold text-lg tracking-tight block">Cadence</span>
+<span class="text-blue-200 text-xs font-medium uppercase tracking-wider block">Uniform Atelier</span>
+</div>
+</div>
+<p class="text-xs text-slate-300 leading-relaxed">
+            Spesialis konveksi dan perancang busana seragam drumband, marching band, serta kostum parade instansi pendidikan profesional dengan standar bahan terbaik.
+          </p>
+<div class="flex items-center gap-3 text-slate-300 pt-1">
+<a class="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors text-white" href="#">
+<span class="material-symbols-outlined text-base">public</span>
+</a>
+<a class="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors text-white" href="#">
+<span class="material-symbols-outlined text-base">chat</span>
+</a>
+<a class="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors text-white" href="#">
+<span class="material-symbols-outlined text-base">mail</span>
+</a>
+</div>
+</div>
+<!-- Kolom Layanan & Produk -->
+<div>
+<h3 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Layanan &amp; Produk</h3>
+<ul class="space-y-2.5 text-xs text-slate-300">
+<li><a class="hover:text-white transition-colors" href="#">Seragam Marching Band Lengkap</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Kostum Color Guard &amp; Mayoret</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Aksesoris Topi Shako &amp; Bulu</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Sepatu &amp; Sarung Tangan Parade</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Pemesanan Custom Lembaga</a></li>
+</ul>
+</div>
+<!-- Kolom Bantuan & Info -->
+<div>
+<h3 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Bantuan &amp; Info</h3>
+<ul class="space-y-2.5 text-xs text-slate-300">
+<li><a class="hover:text-white transition-colors" href="#">Panduan Ukuran (Sizing Chart)</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Status Progres Produksi</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Prosedur Pengadaan Sekolah</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Syarat &amp; Ketentuan Layanan</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Kebijakan Privasi</a></li>
+</ul>
+</div>
+<!-- Kolom Kontak Resmi -->
+<div>
+<h3 class="text-white font-semibold text-sm uppercase tracking-wider mb-4">Kontak Resmi</h3>
+<div class="space-y-3 text-xs text-slate-300">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-base text-blue-300 shrink-0 mt-0.5">location_on</span>
+<span>Jl. Industri Konveksi No. 42, Sentra Garmen, Bandung, Jawa Barat 40228</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-blue-300 shrink-0">call</span>
+<span>(022) 7890-1234 / 0812-3456-7890</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-blue-300 shrink-0">mail</span>
+<span>halo@cadenceatelier.id</span>
+</div>
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-blue-300 shrink-0">schedule</span>
+<span>Senin - Sabtu: 08.00 - 17.00 WIB</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Copyright Bar -->
+<div class="border-t border-blue-900/60 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+<p>© 2025 Cadence Uniform Atelier. Hak Cipta Dilindungi.</p>
+<p class="text-slate-400">Desain Standar Sistem Informasi Produksi &amp; Garment</p>
+</div>
+</div>
+</footer>
+<script>
+    function handleSubmit() {
+      const input = document.getElementById('identifier-input');
+      const submitBtn = document.getElementById('btn-submit');
+      const alertBox = document.getElementById('feedback-alert');
+
+      if (!input || !input.value.trim()) return;
+
+      submitBtn.disabled = true;
+      submitBtn.classList.add('opacity-80', 'cursor-not-allowed');
+      submitBtn.innerHTML = `
+        <span class="material-symbols-outlined text-lg animate-spin">progress_activity</span>
+        <span>Mengirim Instruksi...</span>
+      `;
+
+      setTimeout(() => {
+        submitBtn.classList.remove('opacity-80', 'cursor-not-allowed');
+        submitBtn.innerHTML = `
+          <span class="material-symbols-outlined text-lg">check</span>
+          <span>Kode Terkirim</span>
+        `;
+        submitBtn.classList.replace('bg-[#1E3A8A]', 'bg-emerald-600');
+        submitBtn.classList.remove('hover:bg-[#17245F]');
+
+        if (alertBox) {
+          alertBox.classList.remove('hidden');
+        }
+      }, 1000);
+    }
+  </script>
+</body></html>

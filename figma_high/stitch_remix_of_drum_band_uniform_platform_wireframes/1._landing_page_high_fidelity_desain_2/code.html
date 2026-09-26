@@ -1,0 +1,362 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-fixed-variant": "#464747", "outline": "#747878", "primary-fixed": "#e4e2e1", "on-secondary-container": "#626262", "surface-container-high": "#e8e8e8", "error-container": "#ffdad6", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#e7e1de", "on-background": "#1a1c1c", "surface-container": "#eeeeee", "surface": "#faf9f9", "on-primary": "#ffffff", "on-primary-container": "#9c9b9b", "error": "#ba1a1a", "on-secondary": "#ffffff", "on-tertiary-fixed": "#1d1b1a", "inverse-surface": "#2f3131", "tertiary-fixed-dim": "#cac6c2", "tertiary-container": "#353331", "secondary-fixed": "#e4e2e2", "surface-dim": "#dadada", "on-surface-variant": "#444748", "surface-container-low": "#f4f3f3", "on-secondary-fixed": "#1b1c1c", "surface-tint": "#5f5e5e", "on-error": "#ffffff", "primary-container": "#333333", "surface-container-highest": "#e3e2e2", "on-tertiary-fixed-variant": "#494644", "on-tertiary-container": "#9f9b98", "primary": "#1e1e1e", "surface-variant": "#e3e2e2", "inverse-primary": "#c8c6c6", "on-surface": "#1a1c1c", "outline-variant": "#c4c7c7", "secondary-fixed-dim": "#c7c6c6", "surface-bright": "#faf9f9", "on-primary-fixed-variant": "#474747", "on-tertiary": "#ffffff", "secondary": "#5e5e5e", "on-primary-fixed": "#1b1c1c", "primary-fixed-dim": "#c8c6c6", "on-error-container": "#93000a", "secondary-container": "#e1dfdf", "inverse-on-surface": "#f1f0f0", "background": "#faf9f9", "tertiary": "#201e1c" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin": "30px", "space-lg": "30px", "space-xl": "40px", "gutter": "20px", "space-sm": "10px", "space-xs": "10px", "space-md": "20px" }, "fontFamily": { "microcopy": [ "Inter" ], "body-md": [ "Inter" ], "headline-xl": [ "Inter" ], "label-md": [ "Inter" ], "headline-lg": [ "Inter" ], "body-md-bold": [ "Inter" ], "label-sm": [ "Inter" ] }, "fontSize": { "microcopy": [ "12px", { "lineHeight": "16px", "fontWeight": "400" } ], "body-md": [ "14px", { "lineHeight": "21px", "fontWeight": "400" } ], "headline-xl": [ "24px", { "lineHeight": "28.8px", "fontWeight": "700" } ], "label-md": [ "14px", { "lineHeight": "18px", "fontWeight": "700" } ], "headline-lg": [ "18px", { "lineHeight": "23.4px", "fontWeight": "700" } ], "body-md-bold": [ "14px", { "lineHeight": "21px", "fontWeight": "700" } ], "label-sm": [ "12px", { "lineHeight": "16px", "fontWeight": "700" } ] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased min-h-screen flex flex-col"><header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest border-b border-outline-variant" style="background: #ffffff; border-bottom: 1px solid #E5E7EB; box-shadow: 0 2px 12px rgba(20, 30, 60, 0.04);"><div class="h-20 w-full px-margin flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-sm"><div class="h-8 px-2 border border-dashed border-outline-variant flex items-center justify-center font-microcopy text-microcopy text-secondary rounded-DEFAULT bg-surface-container-low" style="background: #EAF0FF; color: #1E3A8A; border: 1px solid #c7d7fd; border-radius: 8px; font-weight: 700; letter-spacing: 0.05em;">LOGO MARK</div><span class="font-headline-lg text-headline-lg text-primary tracking-tight" style="color: #17245F; font-weight: 800; font-size: 1.25rem;">Nama Usaha</span></div><nav class="hidden lg:flex items-center gap-space-md" data-active-classes="bg-primary-container text-on-primary font-body-md-bold rounded-lg px-space-xs py-1"><a aria-current="page" class="transition-colors bg-primary-container text-on-primary font-body-md-bold rounded-lg px-space-xs py-1" data-path="catalog" href="#" style="background: #1E3A8A; color: #ffffff; font-weight: 600; padding: 6px 16px; border-radius: 9999px; box-shadow: 0 2px 8px rgba(30, 58, 138, 0.25);">Katalog</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="portfolio" href="#">Portofolio</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="place-order" href="#">Pesan Seragam</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="rental" href="#">Penyewaan</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="my-orders-and-rentals" href="#">Pesanan &amp; Rental Saya</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="chat" href="#">Konsultasi Chat</a></nav><div class="flex items-center gap-space-sm"><button aria-label="Notifikasi" class="w-10 h-10 flex items-center justify-center border border-outline-variant bg-surface-container-lowest hover:bg-surface-container-low text-on-surface-variant hover:text-on-surface rounded-lg transition-colors" type="button"><span class="material-symbols-outlined text-body-md">notifications</span></button><a class="h-10 px-space-md border border-outline-variant hover:border-primary bg-surface-container-lowest hover:bg-surface-container-low font-label-md text-label-md text-primary rounded-lg flex items-center transition-colors" data-path="login" href="#" style="background: #1E3A8A; color: #ffffff; border: none; border-radius: 10px; font-weight: 600; box-shadow: 0 2px 8px rgba(30, 58, 138, 0.2);">Masuk / Daftar</a><div class="w-8 h-8 rounded-full border border-outline-variant bg-surface-container-high flex items-center justify-center text-secondary" style="background: #EAF0FF; border: 1px solid #d1e0ff; color: #1E3A8A;"><span class="material-symbols-outlined text-body-md">person</span></div></div></div><div class="h-10 bg-surface-container-low border-t border-outline-variant w-full px-margin flex items-center" style="background: #F1F4F9; border-top: 1px solid #E5E7EB; color: #667085;"><div class="font-microcopy text-microcopy text-on-surface-variant flex items-center gap-space-xs"><span class="hover:text-on-surface cursor-pointer">Beranda</span><span class="text-outline">&gt;</span><span class="font-label-sm text-label-sm text-primary">Halaman Saat Ini</span></div></div></header><main class="w-full pt-20 flex-1 bg-background" style="background: rgb(247, 249, 252);"><div class="flex flex-col w-full"><!-- Top Spec Metadata Strip -->
+<div class="w-full px-margin py-space-xs bg-surface-container-low border-b border-outline-variant flex flex-wrap items-center justify-between gap-space-xs" style="background: #FFFFFF; border-bottom: 1px solid #E5E7EB; box-shadow: 0 1px 3px rgba(0,0,0,0.02);">
+<div class="font-microcopy text-microcopy text-on-surface-variant flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-primary">SPESIFIKASI SISTEM</span>
+<span class="text-outline">|</span>
+<span class="">DOK-ID: WF-LND-001</span>
+<span class="text-outline">|</span>
+<span class="">TAMPILAN: BERANDA PUBLIK &amp; PUSAT PORTOFOLIO</span>
+</div>
+<div class="font-microcopy text-microcopy text-secondary flex items-center gap-space-xs">
+<span class="">GRID: 12-KOLOM / RITME 10PX</span>
+<span class="text-outline">|</span>
+<span class="border border-outline px-1 rounded-DEFAULT text-primary font-label-sm text-label-sm">STATUS: WIREFRAME AKTIF</span>
+</div>
+</div>
+<div class="w-full px-margin py-space-lg space-y-space-lg">
+<!-- 1. Centered Hero Section -->
+<section class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-space-lg text-center space-y-space-sm mb-space-lg" style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 16px; box-shadow: 0 4px 20px rgba(20, 30, 60, 0.05); padding: 40px 32px;">
+<div class="inline-flex items-center gap-space-xs px-space-xs py-0.5 border border-outline-variant rounded-DEFAULT bg-surface-container-low font-microcopy text-microcopy text-on-surface-variant mb-space-xs" style="background: #EAF0FF; border: 1px solid #D1E0FF; color: #1E3A8A; font-weight: 600; border-radius: 9999px; padding: 4px 14px;">
+<span class="material-symbols-outlined text-label-sm text-secondary">architecture</span>
+<span class="">SPESIFIKASI FASILITAS: BENGKEL PENJAHITAN PUSAT &amp; GUDANG LOGISTIK</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary tracking-tight" style="color: #172033; font-weight: 800; font-size: 2rem; line-height: 1.3;">
+        Nama Usaha — Penjahitan Seragam Drum Band &amp; Penyewaan Perlengkapan
+      </h1>
+<p class="font-headline-lg text-headline-lg text-secondary max-w-3xl mx-auto font-normal" style="color: #667085; font-size: 1.15rem; font-weight: 500;">
+        Penjahitan seragam profesional untuk tingkat TK, SD, SMP, SMA, Marching Band, dan penyewaan alat acara
+      </p>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
+        Konsultasi desain khusus, pesanan massal sekolah, dan perlengkapan drum band premium
+      </p>
+<div class="pt-space-sm flex flex-wrap justify-center items-center gap-space-md font-microcopy text-microcopy text-outline">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-label-sm">straighten</span>
+<span class="">PANDUAN UKURAN PRESISI</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-label-sm">inventory_2</span>
+<span class="">LOGISTIK INSTITUSI MASSAL</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-label-sm">event_repeat</span>
+<span class="">PENJADWALAN ARMADA SEWA</span>
+</div>
+</div>
+</section>
+<!-- 2. Three Equal-Width Navigation Link Boxes -->
+<section aria-label="Modul Akses Cepat">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Box 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-space-md flex flex-col justify-between space-y-space-md hover:border-primary transition-colors" style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 16px; box-shadow: 0 4px 16px rgba(20, 30, 60, 0.06); padding: 24px;">
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-microcopy text-microcopy text-secondary">SEC 01 // AKSES</span>
+<span class="material-symbols-outlined text-secondary">assignment</span>
+</div>
+<div class="h-px w-full bg-outline-variant my-space-xs"></div>
+<h2 class="font-headline-lg text-headline-lg text-primary">
+              Pesan Seragam / Masuk
+            </h2>
+<p class="font-body-md text-body-md text-secondary">
+              Akses formulir penjahitan kustom, sistem pemesanan massal sekolah, atau masuk untuk melacak pesanan aktif
+            </p>
+</div>
+<div class="pt-space-xs">
+<a class="w-full h-10 bg-secondary-container hover:bg-surface-container-high border border-primary text-primary font-label-md text-label-md rounded-DEFAULT flex items-center justify-between px-space-md transition-colors" data-path="login" href="#" style="background: #1E3A8A; color: #FFFFFF; border: none; border-radius: 10px; font-weight: 600; box-shadow: 0 2px 8px rgba(30, 58, 138, 0.2);">
+<span class="">Masuk / Daftar Akun -&gt;</span>
+<span class="material-symbols-outlined text-body-md">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Box 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-space-md flex flex-col justify-between space-y-space-md hover:border-primary transition-colors" style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 16px; box-shadow: 0 4px 16px rgba(20, 30, 60, 0.06); padding: 24px;">
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-microcopy text-microcopy text-secondary">SEC 02 // ARSIP</span>
+<span class="material-symbols-outlined text-secondary">photo_library</span>
+</div>
+<div class="h-px w-full bg-outline-variant my-space-xs"></div>
+<h2 class="font-headline-lg text-headline-lg text-primary">
+              Portofolio Kami
+            </h2>
+<p class="font-body-md text-body-md text-secondary">
+              Jelajahi dokumentasi proyek seragam drumband yang telah selesai, jas wisuda, dan bordir lambang khusus
+            </p>
+</div>
+<div class="pt-space-xs">
+<a class="w-full h-10 bg-secondary-container hover:bg-surface-container-high border border-primary text-primary font-label-md text-label-md rounded-DEFAULT flex items-center justify-between px-space-md transition-colors" data-path="portfolio" href="#" style="background: #17245F; color: #FFFFFF; border: none; border-radius: 10px; font-weight: 600; box-shadow: 0 2px 8px rgba(23, 36, 95, 0.2);">
+<span class="">Lihat Galeri Portofolio -&gt;</span>
+<span class="material-symbols-outlined text-body-md">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Box 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-space-md flex flex-col justify-between space-y-space-md hover:border-primary transition-colors" style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 16px; box-shadow: 0 4px 16px rgba(20, 30, 60, 0.06); padding: 24px;">
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-microcopy text-microcopy text-secondary">SEC 03 // STOK</span>
+<span class="material-symbols-outlined text-secondary">storefront</span>
+</div>
+<div class="h-px w-full bg-outline-variant my-space-xs"></div>
+<h2 class="font-headline-lg text-headline-lg text-primary">
+              Katalog Publik &amp; Sewa
+            </h2>
+<p class="font-body-md text-body-md text-secondary">
+              Telusuri set seragam siap pakai, bendera color guard, topi shako, sepatu parade, dan tarif sewa alat
+            </p>
+</div>
+<div class="pt-space-xs">
+<a class="w-full h-10 bg-secondary-container hover:bg-surface-container-high border border-primary text-primary font-label-md text-label-md rounded-DEFAULT flex items-center justify-between px-space-md transition-colors" data-path="catalog" href="#" style="background: #F59E0B; color: #FFFFFF; border: none; border-radius: 10px; font-weight: 700; box-shadow: 0 2px 8px rgba(245, 158, 11, 0.25);">
+<span class="">Telusuri Katalog &amp; Sewa -&gt;</span>
+<span class="material-symbols-outlined text-body-md">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. "Our Portfolio" Showcase Section -->
+<section aria-label="Dokumentasi Portofolio" class="bg-surface-container-lowest border border-outline-variant rounded-lg p-space-lg space-y-space-md" style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 16px; box-shadow: 0 4px 20px rgba(20, 30, 60, 0.05); padding: 32px;">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-xs border-b border-outline-variant pb-space-sm">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary">
+            Portofolio Kami — Galeri Hasil Pekerjaan
+          </h2>
+<p class="font-body-md text-body-md text-secondary">
+            Sampel wireframe showcase hasil pekerjaan klien institusi
+          </p>
+</div>
+<div class="font-microcopy text-microcopy text-outline flex items-center gap-space-xs">
+<span class="">MENAMPILKAN: 4 DARI 48 PROYEK TERDAFTAR</span>
+</div>
+</div>
+<!-- Grid of 4 Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter pt-space-xs">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-DEFAULT p-space-xs flex flex-col space-y-space-sm hover:border-outline transition-colors" style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 14px; box-shadow: 0 2px 10px rgba(20, 30, 60, 0.04); padding: 14px;">
+<!-- Wireframe Placeholder Box -->
+<div class="w-full h-40 bg-surface-container-high border border-dashed border-outline-variant relative flex flex-col items-center justify-center p-space-xs text-center overflow-hidden" style="background: #F1F5FD; border: 1px solid #D6E2FB; border-radius: 10px;">
+<!-- Diagonal Crosshair Guidelines -->
+<svg class="absolute inset-0 w-full h-full text-outline-variant pointer-events-none stroke-current" preserveAspectRatio="none" viewBox="0 0 100 100">
+<line stroke-width="0.5" x1="0" x2="100" y1="0" y2="100"></line>
+<line stroke-width="0.5" x1="100" x2="0" y1="0" y2="100"></line>
+</svg>
+<div class="relative z-10 flex flex-col items-center gap-1 bg-surface-container-high/90 px-space-xs py-1 rounded-DEFAULT border border-outline-variant"><span class="font-microcopy text-microcopy text-secondary">Gambar Produk</span></div>
+</div>
+<!-- Card Body -->
+<div class="space-y-space-xs flex-1 flex flex-col justify-between">
+<div>
+<div class="font-body-md-bold text-body-md-bold text-primary truncate">
+                Nama Proyek: Seragam Drumband
+              </div>
+<div class="font-microcopy text-microcopy text-outline pt-0.5">
+                Nomor Pesanan: Pesanan Kustom
+              </div>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="inline-flex items-center px-2 py-0.5 border border-primary text-primary font-label-sm text-label-sm rounded-DEFAULT" style="background: #EAF0FF; color: #1E3A8A; border: 1px solid #BFDBFE; border-radius: 6px; font-weight: 600;">
+                Paket Kustom
+              </span>
+<span class="font-microcopy text-microcopy text-secondary">Jumlah Kuantitas</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-DEFAULT p-space-xs flex flex-col space-y-space-sm hover:border-outline transition-colors" style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 14px; box-shadow: 0 2px 10px rgba(20, 30, 60, 0.04); padding: 14px;">
+<!-- Wireframe Placeholder Box -->
+<div class="w-full h-40 bg-surface-container-high border border-dashed border-outline-variant relative flex flex-col items-center justify-center p-space-xs text-center overflow-hidden" style="background: #F1F5FD; border: 1px solid #D6E2FB; border-radius: 10px;">
+<svg class="absolute inset-0 w-full h-full text-outline-variant pointer-events-none stroke-current" preserveAspectRatio="none" viewBox="0 0 100 100">
+<line stroke-width="0.5" x1="0" x2="100" y1="0" y2="100"></line>
+<line stroke-width="0.5" x1="100" x2="0" y1="0" y2="100"></line>
+</svg>
+<div class="relative z-10 flex flex-col items-center gap-1 bg-surface-container-high/90 px-space-xs py-1 rounded-DEFAULT border border-outline-variant"><span class="font-microcopy text-microcopy text-secondary">Gambar Produk</span></div>
+</div>
+<!-- Card Body -->
+<div class="space-y-space-xs flex-1 flex flex-col justify-between">
+<div>
+<div class="font-body-md-bold text-body-md-bold text-primary truncate">
+                Nama Proyek: Set Lengkap Drumband
+              </div>
+<div class="font-microcopy text-microcopy text-outline pt-0.5">
+                Nomor Pesanan: Pesanan Kustom
+              </div>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="inline-flex items-center px-2 py-0.5 border border-primary text-primary font-label-sm text-label-sm rounded-DEFAULT" style="background: #EAF0FF; color: #1E3A8A; border: 1px solid #BFDBFE; border-radius: 6px; font-weight: 600;">
+                Paket Lengkap
+              </span>
+<span class="font-microcopy text-microcopy text-secondary">Jumlah Kuantitas</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-DEFAULT p-space-xs flex flex-col space-y-space-sm hover:border-outline transition-colors" style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 14px; box-shadow: 0 2px 10px rgba(20, 30, 60, 0.04); padding: 14px;">
+<!-- Wireframe Placeholder Box -->
+<div class="w-full h-40 bg-surface-container-high border border-dashed border-outline-variant relative flex flex-col items-center justify-center p-space-xs text-center overflow-hidden" style="background: #F1F5FD; border: 1px solid #D6E2FB; border-radius: 10px;">
+<svg class="absolute inset-0 w-full h-full text-outline-variant pointer-events-none stroke-current" preserveAspectRatio="none" viewBox="0 0 100 100">
+<line stroke-width="0.5" x1="0" x2="100" y1="0" y2="100"></line>
+<line stroke-width="0.5" x1="100" x2="0" y1="0" y2="100"></line>
+</svg>
+<div class="relative z-10 flex flex-col items-center gap-1 bg-surface-container-high/90 px-space-xs py-1 rounded-DEFAULT border border-outline-variant"><span class="font-microcopy text-microcopy text-secondary">Gambar Produk</span></div>
+</div>
+<!-- Card Body -->
+<div class="space-y-space-xs flex-1 flex flex-col justify-between">
+<div>
+<div class="font-body-md-bold text-body-md-bold text-primary truncate">
+                Nama Proyek: Korps Drum Band
+              </div>
+<div class="font-microcopy text-microcopy text-outline pt-0.5">
+                Nomor Pesanan: Pesanan Kustom
+              </div>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="inline-flex items-center px-2 py-0.5 border border-primary text-primary font-label-sm text-label-sm rounded-DEFAULT" style="background: #EAF0FF; color: #1E3A8A; border: 1px solid #BFDBFE; border-radius: 6px; font-weight: 600;">
+                Jas Kustom
+              </span>
+<span class="font-microcopy text-microcopy text-secondary">Jumlah Kuantitas</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-DEFAULT p-space-xs flex flex-col space-y-space-sm hover:border-outline transition-colors" style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 14px; box-shadow: 0 2px 10px rgba(20, 30, 60, 0.04); padding: 14px;">
+<!-- Wireframe Placeholder Box -->
+<div class="w-full h-40 bg-surface-container-high border border-dashed border-outline-variant relative flex flex-col items-center justify-center p-space-xs text-center overflow-hidden" style="background: #F1F5FD; border: 1px solid #D6E2FB; border-radius: 10px;">
+<svg class="absolute inset-0 w-full h-full text-outline-variant pointer-events-none stroke-current" preserveAspectRatio="none" viewBox="0 0 100 100">
+<line stroke-width="0.5" x1="0" x2="100" y1="0" y2="100"></line>
+<line stroke-width="0.5" x1="100" x2="0" y1="0" y2="100"></line>
+</svg>
+<div class="relative z-10 flex flex-col items-center gap-1 bg-surface-container-high/90 px-space-xs py-1 rounded-DEFAULT border border-outline-variant"><span class="font-microcopy text-microcopy text-secondary">Gambar Produk</span></div>
+</div>
+<!-- Card Body -->
+<div class="space-y-space-xs flex-1 flex flex-col justify-between">
+<div>
+<div class="font-body-md-bold text-body-md-bold text-primary truncate">
+                Nama Produk: Regalia Komandan Lapangan &amp; Mayoret
+              </div>
+<div class="font-microcopy text-microcopy text-outline pt-0.5">
+                Nomor Pesanan: Pesanan Kustom
+              </div>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<span class="inline-flex items-center px-2 py-0.5 border border-primary text-primary font-label-sm text-label-sm rounded-DEFAULT" style="background: #FFF4D6; color: #B45309; border: 1px solid #FDE68A; border-radius: 6px; font-weight: 600;">
+                Aksesoris &amp; Sewa
+              </span>
+<span class="font-microcopy text-microcopy text-secondary">Jumlah Kuantitas</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Full Gallery Link / CTA Banner -->
+<div class="pt-space-md border-t border-outline-variant flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="font-microcopy text-microcopy text-secondary flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-label-sm">verified</span>
+<span class="">SEMUA PESANAN DIBUAT SESUAI STANDAR MUTU INSTITUSI</span>
+</div>
+<a class="h-10 px-space-md bg-secondary-container hover:bg-surface-container-high border border-primary text-primary font-label-md text-label-md rounded-DEFAULT inline-flex items-center gap-space-xs transition-colors" data-path="portfolio" href="#" style="background: #1E3A8A; color: #FFFFFF; border: none; border-radius: 10px; font-weight: 600; box-shadow: 0 2px 8px rgba(30, 58, 138, 0.2);">
+<span class="">Lihat Semua 48 Proyek di Portofolio Lengkap -&gt;</span>
+</a>
+</div>
+</section>
+<!-- Supplemental Specification Strip (Wireframe Process Protocol) -->
+<section class="bg-surface-container-low border border-outline-variant rounded-lg p-space-md" style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 16px; box-shadow: 0 4px 16px rgba(20, 30, 60, 0.04); padding: 28px;">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter font-microcopy text-microcopy">
+<div class="space-y-1">
+<div class="font-label-sm text-label-sm text-primary">01. PENGUKURAN</div>
+<div class="text-on-surface-variant">Konsultasi pengukuran ukuran tubuh langsung di sekolah atau unggah lembar format ukuran digital.</div>
+</div>
+<div class="space-y-1">
+<div class="font-label-sm text-label-sm text-primary">02. PEMILIHAN BAHAN</div>
+<div class="text-on-surface-variant">Bahan drill standar, semi-wool, tropical fabric berkualitas, dan ornamen logam kuningan awet.</div>
+</div>
+<div class="space-y-1">
+<div class="font-label-sm text-label-sm text-primary">03. JADWAL PRODUKSI</div>
+<div class="text-on-surface-variant">Pengerjaan standar 14-21 hari kerja dengan pemantauan tahapan kendali mutu berkala.</div>
+</div>
+<div class="space-y-1">
+<div class="font-label-sm text-label-sm text-primary">04. SANITASI ARMADA SEWA</div>
+<div class="text-on-surface-variant">Pencucian uap industri dan inspeksi higienis menyeluruh pasca-acara bergaransi.</div>
+</div>
+</div>
+</section>
+</div></div></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant mt-margin" style="background: rgb(23, 36, 95); color: rgb(255, 255, 255); border-top: 1px solid rgb(30, 58, 138); margin-top: 48px;">
+  <div class="w-full px-margin py-space-xl">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-space-lg">
+      <!-- Column 1: Info Usaha -->
+      <div class="space-y-space-xs">
+        <div class="flex items-center gap-space-sm mb-space-xs">
+          <div class="h-8 px-2 flex items-center justify-center font-microcopy text-microcopy rounded-DEFAULT" style="background: #EAF0FF; color: #1E3A8A; font-weight: 700; border-radius: 6px;">LOGO</div>
+          <span class="font-headline-lg text-headline-lg" style="color: #FFFFFF; font-weight: 700;">Nama Usaha</span>
+        </div>
+        <p class="font-body-md text-body-md" style="color: #CBD5E1; line-height: 1.6;">
+          Solusi konveksi penjahitan seragam marching band, drumband instansi pendidikan, jas wisuda, serta layanan rental perlengkapan pertunjukan terlengkap.
+        </p>
+        <div class="pt-space-xs flex items-center gap-space-xs">
+          <span class="inline-block px-2 py-1 rounded-DEFAULT font-microcopy text-microcopy" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: #93C5FD; border-radius: 6px; font-weight: 600;">ISO-GRADE JAHITAN PRESISI</span>
+        </div>
+      </div>
+
+      <!-- Column 2: Layanan & Produk -->
+      <div class="space-y-space-xs">
+        <div class="font-headline-lg text-headline-lg" style="color: #FFFFFF; font-weight: 700;">Layanan &amp; Produk</div>
+        <ul class="space-y-1 font-body-md text-body-md" style="color: #CBD5E1;">
+          <li class=""><a href="#" class="hover:text-white transition-colors">Jahit Seragam Drumband SD/SMP/SMA</a></li>
+          <li class=""><a href="#" class="hover:text-white transition-colors">Seragam Mayoret &amp; Field Commander</a></li>
+          <li class=""><a href="#" class="hover:text-white transition-colors">Kostum Color Guard &amp; Bendera</a></li>
+          <li class=""><a href="#" class="hover:text-white transition-colors">Penyewaan Alat Musik &amp; Topi Shako</a></li>
+          <li class=""><a href="#" class="hover:text-white transition-colors">Bordir Komputer Lambang Sekolah</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Bantuan & Panduan -->
+      <div class="space-y-space-xs">
+        <div class="font-headline-lg text-headline-lg" style="color: #FFFFFF; font-weight: 700;">Bantuan &amp; Info</div>
+        <ul class="space-y-1 font-body-md text-body-md" style="color: #CBD5E1;">
+          <li class=""><a href="#" class="hover:text-white transition-colors">Panduan Pengukuran Tubuh Mandiri</a></li>
+          <li class=""><a href="#" class="hover:text-white transition-colors">Syarat &amp; Ketentuan Rental Alat</a></li>
+          <li class=""><a href="#" class="hover:text-white transition-colors">Format Unggah Pesanan Massal</a></li>
+          <li class=""><a href="#" class="hover:text-white transition-colors">Jadwal Pemeliharaan &amp; Sanitasi</a></li>
+          <li class=""><a href="#" class="hover:text-white transition-colors">Lacak Status Pengiriman Pesanan</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Kontak Resmi -->
+      <div class="space-y-space-xs">
+        <div class="font-headline-lg text-headline-lg" style="color: #FFFFFF; font-weight: 700;">Kontak Resmi</div>
+        <ul class="space-y-space-xs font-body-md text-body-md" style="color: #CBD5E1;">
+          <li class="flex items-start gap-space-xs">
+            <span class="material-symbols-outlined text-body-md pt-0.5" style="color: #93C5FD;">location_on</span>
+            <span class="">Jl. Industri Penjahitan No. 88, Kawasan Sentra Tekstil, Indonesia</span>
+          </li>
+          <li class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-body-md" style="color: #93C5FD;">call</span>
+            <span class="">+62 (021) 555-8921 / 0812-3456-7890</span>
+          </li>
+          <li class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-body-md" style="color: #93C5FD;">mail</span>
+            <span class="">info@namausaha-konveksi.co.id</span>
+          </li>
+          <li class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-body-md" style="color: #93C5FD;">schedule</span>
+            <span class="">Senin - Sabtu: 08.00 - 17.00 WIB</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright Bar -->
+    <div class="pt-space-md border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-space-sm font-microcopy text-microcopy" style="border-top: 1px solid rgba(255, 255, 255, 0.15); color: #94A3B8;">
+      <div class="">© 2025 Nama Usaha. Hak Cipta Dilindungi Undang-Undang. Layanan Resmi Penjahitan &amp; Sewa Perlengkapan.</div>
+      <div class="flex items-center gap-space-md">
+        <a href="#" class="hover:text-white transition-colors">Kebijakan Privasi</a>
+        <span class="">•</span>
+        <a href="#" class="hover:text-white transition-colors">Syarat Layanan</a>
+        <span class="">•</span>
+        <span style="color: #60A5FA;" class="">Standar Mutu Institusi Terverifikasi</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body></html>
