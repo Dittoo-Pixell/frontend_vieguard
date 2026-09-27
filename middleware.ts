@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
+// Routes that strictly require the user to be logged in
 const protectedRoutes = [
   "/pesan-seragam",
   "/pesanan-rental-saya",
@@ -9,18 +10,36 @@ const protectedRoutes = [
   "/notifikasi",
 ];
 
+// Auth routes that should redirect to home if already logged in
+const authRoutes = [
+  "/masuk",
+  "/daftar",
+  "/lupa-password",
+  "/konfirmasi-kode",
+];
+
 export function middleware(request: NextRequest) {
   const token = request.cookies.get("accessToken")?.value;
+  const { pathname } = request.nextUrl;
+
   const isProtected = protectedRoutes.some((route) =>
-    request.nextUrl.pathname.startsWith(route),
+    pathname.startsWith(route),
   );
 
-  // In production, enforce strict authentication.
-  // In development, allow viewing so the user can inspect all UI pages without a running database.
-  if (process.env.NODE_ENV === "production" && isProtected && !token) {
+  const isAuth = authRoutes.some((route) =>
+    pathname.startsWith(route),
+  );
+
+  // If user is not logged in and tries to access protected pages, redirect to /masuk
+  if (isProtected && !token) {
     const redirectUrl = new URL("/masuk", request.url);
-    redirectUrl.searchParams.set("callbackUrl", request.nextUrl.pathname);
+    redirectUrl.searchParams.set("callbackUrl", pathname);
     return NextResponse.redirect(redirectUrl);
+  }
+
+  // If user is already logged in and tries to access login/register, redirect to home
+  if (isAuth && token) {
+    return NextResponse.redirect(new URL("/", request.url));
   }
 
   return NextResponse.next();

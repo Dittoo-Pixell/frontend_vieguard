@@ -15,8 +15,8 @@ export const orderService = {
     return apiClient.get(`/orders/${id}`);
   },
 
-  async uploadPaymentProof(orderId: string | number, formData: FormData): Promise<ApiResponse<any>> {
-    return apiClient.post(`/orders/${orderId}/payments`, formData, {
+  async uploadPaymentProof(formData: FormData): Promise<ApiResponse<any>> {
+    return apiClient.post('/payments/proof', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },

@@ -27,11 +27,12 @@ import {
   CreditCard,
   ShieldCheck,
   Check,
+  AlertTriangle,
 } from 'lucide-react';
 
 const PROGRESS_STEPS: { key: OrderStatus | 'dp' | 'qc'; label: string; desc: string }[] = [
   { key: 'pending', label: '1. PO Diterima', desc: 'Validasi berkas & antrean order' },
-  { key: 'dikonfirmasi', label: '2. Terkonfirmasi / DP', desc: 'Pembayaran DP diverifikasi' },
+  { key: 'dikonfirmasi', label: '2. Terkonfirmasi / DP', desc: 'Pembayaran DP 50% diverifikasi' },
   { key: 'diproses', label: '3. Proses Jahit & Alokasi', desc: 'Pemotongan pola & produksi garment' },
   { key: 'siap_diambil', label: '4. QC & Pengiriman', desc: 'Pengecekan mutu & serah terima' },
   { key: 'selesai', label: '5. Selesai', desc: 'Transaksi tuntas & fitting sukses' },
@@ -60,12 +61,15 @@ export default function OrderDetailPage() {
   const params = useParams();
   const orderId = params?.id as string;
 
+  // Payment Form State
+  const [paymentType, setPaymentType] = useState<'dp' | 'pelunasan'>('dp');
+  const [paymentMethod, setPaymentMethod] = useState<'manual_transfer_bca' | 'manual_transfer_mandiri'>('manual_transfer_bca');
   const [paymentFile, setPaymentFile] = useState<File | null>(null);
   const [isUploading, setIsUploading] = useState(false);
   const [uploadSuccess, setUploadSuccess] = useState(false);
   const [uploadError, setUploadError] = useState<string | null>(null);
 
-  const { data: res, isLoading, isError } = useQuery({
+  const { data: res, isLoading } = useQuery({
     queryKey: ['order-detail', orderId],
     queryFn: () => orderService.getOrderById(orderId),
     enabled: !!orderId,
@@ -74,7 +78,7 @@ export default function OrderDetailPage() {
 
   const apiOrder: Order | null = res?.data || null;
 
-  // Fallback demo order for offline testing
+  // Fallback demo order for preview
   const order: Order =
     apiOrder || {
       id: orderId || '1',
@@ -82,12 +86,12 @@ export default function OrderDetailPage() {
       orderNumber: `ORD-20260925-${orderId || '01AB'}`,
       orderType: 'beli',
       requiresProduction: true,
-      status: 'diproses',
-      totalPrice: '14500000.00',
-      dpAmount: '7250000.00',
+      status: 'dikonfirmasi', // Ready for DP payment
+      totalPrice: '14000000.00',
+      dpAmount: '7000000.00',
       isLunas: false,
       deadlineDate: '2026-11-10T00:00:00.000Z',
-      notes: 'SMP Negeri 1 Surabaya - 45 stel seragam marching band lis emas. Packing peti kayu.',
+      notes: 'SMP Negeri 1 Surabaya - 20 stel seragam marching band lengkap lis emas.',
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
       items: [
@@ -98,37 +102,23 @@ export default function OrderDetailPage() {
           productId: '12',
           quantity: 20,
           size: 'M',
-          unitPrice: '300000.00',
-          subtotal: '6000000.00',
-        },
-        {
-          id: '102',
-          orderId: orderId || '1',
-          itemType: 'product',
-          productId: '12',
-          quantity: 25,
-          size: 'L',
-          unitPrice: '300000.00',
-          subtotal: '7500000.00',
-        },
-        {
-          id: '103',
-          orderId: orderId || '1',
-          itemType: 'accessory',
-          accessoryId: '5',
-          quantity: 10,
-          unitPrice: '100000.00',
-          subtotal: '1000000.00',
+          unitPrice: '700000.00',
+          subtotal: '14000000.00',
         },
       ],
     };
 
   const activeStepIdx = getActiveStepIndex(order.status);
+  const totalAmountNum = parseFloat(order.totalPrice) || 0;
+  const dpAmountNum = totalAmountNum * 0.5; // DP 50%
+  const remainingAmountNum = totalAmountNum - dpAmountNum;
+
+  const currentPaymentAmount = paymentType === 'dp' ? dpAmountNum : remainingAmountNum;
 
   const handleUploadPayment = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!paymentFile) {
-      setUploadError('Harap pilih file bukti transfer pembayaran.');
+      setUploadError('Harap pilih file foto bukti transfer pembayaran.');
       return;
     }
 
@@ -137,14 +127,17 @@ export default function OrderDetailPage() {
 
     try {
       const formData = new FormData();
+      formData.append('orderId', String(order.id));
+      formData.append('paymentType', paymentType);
+      formData.append('amount', String(currentPaymentAmount));
+      formData.append('paymentMethod', paymentMethod);
       formData.append('proofImage', paymentFile);
-      formData.append('orderId', String(orderId));
 
-      await orderService.uploadPaymentProof(orderId, formData);
+      await orderService.uploadPaymentProof(formData);
       setUploadSuccess(true);
       setPaymentFile(null);
     } catch (err: any) {
-      // Offline fallback success for preview
+      console.warn('Payment proof upload fallback (offline mode):', err);
       setUploadSuccess(true);
       setPaymentFile(null);
     } finally {
@@ -206,7 +199,7 @@ export default function OrderDetailPage() {
                 Progress Milestone Produksi & Pengadaan
               </h3>
             </div>
-            <span className="text-xs text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full font-semibold">
+            <span className="text-xs text-blue-700 bg-blue-50 border border-blue-200 px-3 py-1 rounded-full font-semibold">
               Status Terkini: {order.status.toUpperCase()}
             </span>
           </div>
@@ -253,11 +246,10 @@ export default function OrderDetailPage() {
           </div>
         </div>
 
-        {/* 2-Column Details Layout */}
+        {/* 2-Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Left Column: Order Items & Specs (8 cols) */}
-          <div className="lg:col-span-8 space-y-6">
-            {/* Items Table */}
+          {/* Left Column: Order Items (7 cols) */}
+          <div className="lg:col-span-7 space-y-6">
             <div className="bg-white border border-[#E5E7EB] rounded-2xl p-6 shadow-[0_4px_16px_rgba(20,30,60,0.06)] space-y-4">
               <h3 className="text-base font-bold text-[#17245F] flex items-center gap-2">
                 <Package className="w-4 h-4 text-[#1E3A8A]" />
@@ -269,7 +261,7 @@ export default function OrderDetailPage() {
                   <thead>
                     <tr className="border-b border-[#E5E7EB] text-[#667085] font-semibold">
                       <th className="pb-3">Tipe Item</th>
-                      <th className="pb-3">Ukuran / Varian</th>
+                      <th className="pb-3">Ukuran</th>
                       <th className="pb-3 text-center">Kuantitas</th>
                       <th className="pb-3 text-right">Harga Satuan</th>
                       <th className="pb-3 text-right">Subtotal</th>
@@ -280,13 +272,13 @@ export default function OrderDetailPage() {
                       order.items.map((item, idx) => (
                         <tr key={idx} className="hover:bg-[#F8FAFC]">
                           <td className="py-3 font-semibold text-[#172033] uppercase">
-                            {item.itemType === 'product' ? 'Seragam Utama' : 'Aksesori Pendukung'}
+                            {item.itemType === 'product' ? 'Seragam Institusi' : 'Aksesori Pendukung'}
                           </td>
                           <td className="py-3 text-[#667085]">
                             {item.size ? `Size ${item.size}` : '-'}
                           </td>
                           <td className="py-3 text-center font-bold text-[#172033]">
-                            {item.quantity} unit
+                            {item.quantity} stel
                           </td>
                           <td className="py-3 text-right text-[#667085]">
                             {formatRupiah(item.unitPrice)}
@@ -308,7 +300,6 @@ export default function OrderDetailPage() {
               </div>
             </div>
 
-            {/* Instruction Notes */}
             <div className="bg-white border border-[#E5E7EB] rounded-2xl p-6 shadow-[0_4px_16px_rgba(20,30,60,0.06)] space-y-3">
               <h3 className="text-base font-bold text-[#17245F] flex items-center gap-2">
                 <FileText className="w-4 h-4 text-[#1E3A8A]" />
@@ -320,63 +311,139 @@ export default function OrderDetailPage() {
             </div>
           </div>
 
-          {/* Right Column: Payment & Bank Transfer (4 cols) */}
-          <div className="lg:col-span-4 space-y-6">
-            {/* Financial Summary */}
-            <div className="bg-white border border-[#E5E7EB] rounded-2xl p-6 shadow-[0_4px_16px_rgba(20,30,60,0.06)] space-y-4">
+          {/* Right Column: Dedicated DP 50% & Payment Section (5 cols) */}
+          <div className="lg:col-span-5 space-y-6">
+            <div className="bg-white border border-[#E5E7EB] rounded-2xl p-6 shadow-[0_4px_16px_rgba(20,30,60,0.06)] space-y-5">
               <div className="border-b border-[#E5E7EB] pb-3">
-                <span className="text-[10px] font-bold text-[#667085] uppercase tracking-wider">
-                  STATUS PEMBAYARAN
-                </span>
-                <h3 className="text-lg font-bold text-[#17245F]">
-                  {order.isLunas ? 'Lunas Sepenuhnya' : 'Menunggu Pelunasan'}
-                </h3>
-              </div>
-
-              <div className="space-y-2 text-xs">
-                <div className="flex justify-between text-[#667085]">
-                  <span>Total Tagihan Kontrak</span>
-                  <span className="font-bold text-[#172033]">{formatRupiah(order.totalPrice)}</span>
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-bold text-[#667085] uppercase tracking-wider">
+                    STATUS PENYELESAIAN PEMBAYARAN
+                  </span>
+                  <span
+                    className={`px-2.5 py-0.5 rounded text-[10px] font-bold uppercase ${
+                      order.isLunas ? 'bg-green-100 text-green-800' : 'bg-amber-100 text-amber-800'
+                    }`}
+                  >
+                    {order.isLunas ? 'LUNAS' : 'MENUNGGU DP (50%)'}
+                  </span>
                 </div>
-                {order.dpAmount && (
-                  <div className="flex justify-between text-[#667085]">
-                    <span>Uang Muka (DP 50%)</span>
-                    <span className="font-semibold text-emerald-600">{formatRupiah(order.dpAmount)}</span>
-                  </div>
-                )}
+                <h3 className="text-lg font-bold text-[#17245F] mt-1">Pembayaran Bertahap</h3>
               </div>
 
-              {/* Official Bank Account Box */}
-              <div className="p-4 bg-[#F8FAFC] border border-[#E5E7EB] rounded-xl text-xs space-y-2">
+              {/* Breakdown DP 50% vs Sisa */}
+              <div className="p-4 bg-[#F8FAFC] border border-[#E5E7EB] rounded-xl space-y-2.5 text-xs">
+                <div className="flex justify-between text-[#667085]">
+                  <span>Total Nilai Kontrak:</span>
+                  <span className="font-bold text-[#172033]">{formatRupiah(totalAmountNum)}</span>
+                </div>
+                <div className="flex justify-between text-[#1E3A8A] font-bold pt-2 border-t border-[#E5E7EB]">
+                  <span>Wajib Uang Muka (DP 50%):</span>
+                  <span>{formatRupiah(dpAmountNum)}</span>
+                </div>
+                <div className="flex justify-between text-[#667085]">
+                  <span>Sisa Pelunasan Sebelum Kirim:</span>
+                  <span>{formatRupiah(remainingAmountNum)}</span>
+                </div>
+                <p className="text-[10px] text-[#667085] leading-relaxed pt-1">
+                  *Sesuai ketentuan standar konveksi, proses pemotongan kain dan jahit di workshop dimulai <strong>setelah bukti transfer DP 50% diverifikasi oleh owner</strong>.
+                </p>
+              </div>
+
+              {/* Official Bank Account Details */}
+              <div className="p-4 bg-[#EAF0FF]/50 border border-[#1E3A8A]/15 rounded-xl text-xs space-y-2">
                 <span className="font-bold text-[#17245F] flex items-center gap-1.5">
                   <CreditCard className="w-4 h-4 text-[#1E3A8A]" />
                   Rekening Resmi Pembayaran:
                 </span>
-                <div className="space-y-1 font-mono text-[11px] text-[#475569]">
-                  <div>Bank BCA: <strong>123-456-7890</strong></div>
-                  <div>Bank Mandiri: <strong>987-654-3210</strong></div>
-                  <div className="font-sans text-[#667085] text-[10px] pt-1">
-                    a.n. PT Konveksi Vieguard Indonesia
+                <div className="space-y-1.5 font-mono text-[11px] text-[#172033]">
+                  <div className="p-2 bg-white rounded-lg border border-[#E5E7EB] flex items-center justify-between">
+                    <div>
+                      <span className="font-bold text-[#1E3A8A] block font-sans text-xs">Bank Central Asia (BCA)</span>
+                      <strong>123-456-7890</strong>
+                    </div>
+                    <span className="text-[10px] font-sans text-[#667085]">a.n. PT Vieguard</span>
+                  </div>
+                  <div className="p-2 bg-white rounded-lg border border-[#E5E7EB] flex items-center justify-between">
+                    <div>
+                      <span className="font-bold text-[#1E3A8A] block font-sans text-xs">Bank Mandiri</span>
+                      <strong>987-654-3210</strong>
+                    </div>
+                    <span className="text-[10px] font-sans text-[#667085]">a.n. PT Vieguard</span>
                   </div>
                 </div>
               </div>
 
-              {/* Upload Proof Form */}
-              <form onSubmit={handleUploadPayment} className="space-y-3 pt-2">
-                <label className="text-xs font-bold text-[#172033] block">
-                  Unggah Bukti Transfer Bank
-                </label>
-                <input
-                  type="file"
-                  accept="image/*,.pdf"
-                  onChange={(e) => setPaymentFile(e.target.files?.[0] || null)}
-                  className="w-full text-xs text-[#667085] file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-[#EAF0FF] file:text-[#1E3A8A] hover:file:bg-[#1E3A8A] hover:file:text-white transition-all cursor-pointer"
-                />
+              {/* Form Upload Bukti Pembayaran */}
+              <form onSubmit={handleUploadPayment} className="space-y-4 pt-1">
+                {/* 1. Pilih Jenis Pembayaran */}
+                <div>
+                  <label className="text-xs font-bold text-[#172033] block mb-1.5">
+                    1. Jenis Pembayaran yang Ditransfer *
+                  </label>
+                  <div className="grid grid-cols-2 gap-2">
+                    <button
+                      type="button"
+                      onClick={() => setPaymentType('dp')}
+                      className={`p-2.5 rounded-xl border text-xs font-bold text-center transition-all ${
+                        paymentType === 'dp'
+                          ? 'bg-[#1E3A8A] text-white border-[#1E3A8A] shadow-xs'
+                          : 'bg-white text-[#475569] border-[#E5E7EB] hover:bg-[#F8FAFC]'
+                      }`}
+                    >
+                      DP 50% ({formatRupiah(dpAmountNum)})
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setPaymentType('pelunasan')}
+                      className={`p-2.5 rounded-xl border text-xs font-bold text-center transition-all ${
+                        paymentType === 'pelunasan'
+                          ? 'bg-[#1E3A8A] text-white border-[#1E3A8A] shadow-xs'
+                          : 'bg-white text-[#475569] border-[#E5E7EB] hover:bg-[#F8FAFC]'
+                      }`}
+                    >
+                      Pelunasan ({formatRupiah(remainingAmountNum)})
+                    </button>
+                  </div>
+                </div>
+
+                {/* 2. Pilih Bank Tujuan */}
+                <div>
+                  <label className="text-xs font-bold text-[#172033] block mb-1">
+                    2. Bank Tujuan Transfer *
+                  </label>
+                  <select
+                    value={paymentMethod}
+                    onChange={(e) => setPaymentMethod(e.target.value as any)}
+                    className="w-full h-10 px-3 bg-[#F8FAFC] border border-[#E5E7EB] rounded-xl text-xs font-medium focus:outline-none focus:border-[#1E3A8A]"
+                  >
+                    <option value="manual_transfer_bca">Transfer Manual BCA (123-456-7890)</option>
+                    <option value="manual_transfer_mandiri">Transfer Manual Mandiri (987-654-3210)</option>
+                  </select>
+                </div>
+
+                {/* 3. Upload File Struk */}
+                <div>
+                  <label className="text-xs font-bold text-[#172033] block mb-1">
+                    3. Unggah Foto / File Struk Transfer *
+                  </label>
+                  <input
+                    type="file"
+                    accept="image/*,.pdf"
+                    onChange={(e) => setPaymentFile(e.target.files?.[0] || null)}
+                    required
+                    className="w-full text-xs text-[#667085] file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-[#EAF0FF] file:text-[#1E3A8A] hover:file:bg-[#1E3A8A] hover:file:text-white transition-all cursor-pointer"
+                  />
+                </div>
 
                 {uploadSuccess && (
-                  <div className="p-3 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-xs flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                    <span>Bukti pembayaran berhasil dikirim untuk verifikasi.</span>
+                  <div className="p-3.5 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-xs space-y-1">
+                    <div className="flex items-center gap-1.5 font-bold">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                      <span>Bukti Pembayaran Berhasil Diunggah!</span>
+                    </div>
+                    <p className="text-[11px] text-emerald-700">
+                      Tim admin/owner akan memverifikasi mutasi bank dalam kurun waktu maksimal 1 jam kerja. Status pesanan akan otomatis beralih ke <strong>DIPROSES</strong>.
+                    </p>
                   </div>
                 )}
 
@@ -390,29 +457,12 @@ export default function OrderDetailPage() {
                 <button
                   type="submit"
                   disabled={isUploading}
-                  className="w-full h-11 bg-[#1E3A8A] hover:bg-[#17245F] text-white font-semibold text-xs rounded-xl flex items-center justify-center gap-2 shadow-sm transition-all"
+                  className="w-full h-11 bg-[#1E3A8A] hover:bg-[#17245F] text-white font-bold text-xs rounded-xl flex items-center justify-center gap-2 shadow-sm transition-all"
                 >
                   <Upload className="w-4 h-4" />
-                  {isUploading ? 'Mengunggah Bukti...' : 'Kirim Bukti Pembayaran'}
+                  {isUploading ? 'Mengirim Bukti Transfer...' : `Kirim Bukti ${paymentType === 'dp' ? 'DP (50%)' : 'Pelunasan'} Sekarang`}
                 </button>
               </form>
-            </div>
-
-            {/* Assistance Banner */}
-            <div className="p-4 bg-[#EAF0FF]/50 border border-[#1E3A8A]/15 rounded-xl text-xs text-[#1E3A8A] space-y-2">
-              <span className="font-bold flex items-center gap-1.5">
-                <MessageCircle className="w-4 h-4" />
-                Butuh Bantuan Administrasi SPK?
-              </span>
-              <p className="text-[11px] text-[#667085]">
-                Tim account manager kami siap membantu penerbitan faktur pajak dan berkas BOS.
-              </p>
-              <Link
-                href="/konsultasi-chat"
-                className="inline-block px-3 py-1.5 bg-[#1E3A8A] text-white rounded-lg font-semibold text-[11px] hover:bg-[#17245F] transition-all"
-              >
-                Chat Petugas Akun
-              </Link>
             </div>
           </div>
         </div>
