@@ -1,47 +1,47 @@
+// Types aligned with backend Prisma schema
+
 export interface Category {
   id: string;
   name: string;
   description?: string | null;
+  _count?: {
+    products: number;
+  };
 }
 
 export interface ProductImage {
   id: string;
+  productId?: string;
   imageUrl: string;
-  isPrimary?: boolean;
+  isPrimary: boolean;
 }
 
 export interface ProductVariant {
   id: string;
-  name: string;
-  size?: string;
-  priceBuy?: number;
-  priceRent?: number;
-  stock?: number;
-}
-
-export interface ProductSize {
-  id?: string;
+  productId?: string;
   size: string;
-  price?: number;
-  stock?: number;
+  stockBuy: number;
+  stockRent: number;
+  priceBuyOverride?: string | null;
+  priceRentOverride?: string | null;
+  deletedAt?: string | null;
 }
 
 export interface Product {
   id: string;
+  categoryId: string;
   name: string;
-  slug?: string;
-  description: string;
-  basePriceBuy?: number;
-  basePriceRent?: number;
-  price?: number;
-  categoryId?: string;
-  category?: Category;
-  images?: (string | ProductImage)[];
-  variants?: ProductVariant[];
-  sizes?: ProductSize[];
-  isFeatured?: boolean;
-  type?: 'beli' | 'sewa' | 'custom' | 'portfolio';
+  description?: string | null;
+  basePriceBuy?: string | null;
+  basePriceRent?: string | null;
+  isCustomAvailable: boolean;
+  isVisible: boolean;
+  deletedAt?: string | null;
   createdAt?: string;
+  updatedAt?: string;
+  category?: Category;
+  images?: ProductImage[];
+  variants?: ProductVariant[];
 }
 
 export interface ProductFilterParams {
@@ -49,8 +49,4 @@ export interface ProductFilterParams {
   search?: string;
   minPrice?: string;
   maxPrice?: string;
-  type?: string;
-  page?: number;
-  limit?: number;
-  featured?: boolean;
 }

@@ -1,15 +1,13 @@
+// Types aligned with backend Prisma Accessory model
+
 export interface Accessory {
   id: string;
   name: string;
-  code?: string;
-  description: string;
-  rentalPrice: number;
-  depositPrice: number;
+  description?: string | null;
+  price: string; // Decimal from backend comes as string
   stock: number;
-  availableStock?: number;
-  images: string[];
-  category?: string;
-  condition?: string;
+  imageUrl?: string | null;
+  deletedAt?: string | null;
 }
 
 export interface RentalBookingDto {

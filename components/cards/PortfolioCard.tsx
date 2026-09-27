@@ -63,7 +63,7 @@ export function PortfolioCard({ product }: PortfolioCardProps) {
             {product.category?.name || 'Paket Standar'}
           </Badge>
           <span className="text-xs font-bold text-[#1E3A8A]">
-            {formatRupiah(product.price || product.basePriceBuy)}
+            {formatRupiah(product.basePriceBuy || product.basePriceRent)}
           </span>
         </div>
       </div>
