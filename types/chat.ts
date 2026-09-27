@@ -3,17 +3,18 @@ export interface ChatMessage {
   conversationId: string;
   senderId: string;
   senderType: 'user' | 'admin';
-  message: string;
-  attachmentUrl?: string | null;
+  messageText?: string | null;
+  imageAttachment?: string | null;
+  isRead: boolean;
   createdAt: string;
-  readAt?: string | null;
 }
 
 export interface Conversation {
   id: string;
   userId: string;
   adminId?: string | null;
-  lastMessage?: string | null;
-  lastMessageAt?: string | null;
+  createdAt?: string;
+  updatedAt?: string;
+  messages?: ChatMessage[];
   unreadCount?: number;
 }

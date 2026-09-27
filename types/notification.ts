@@ -1,10 +1,11 @@
 export interface Notification {
   id: string;
-  userId: string;
+  recipientType: 'user' | 'admin';
+  recipientId: string;
+  type: string;
   title: string;
   message: string;
-  type: 'order' | 'rental' | 'payment' | 'chat' | 'system';
-  referenceId?: string | null;
+  relatedOrderId?: string | null;
   isRead: boolean;
   createdAt: string;
 }

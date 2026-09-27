@@ -15,7 +15,9 @@ export function middleware(request: NextRequest) {
     request.nextUrl.pathname.startsWith(route),
   );
 
-  if (isProtected && !token) {
+  // In production, enforce strict authentication.
+  // In development, allow viewing so the user can inspect all UI pages without a running database.
+  if (process.env.NODE_ENV === "production" && isProtected && !token) {
     const redirectUrl = new URL("/masuk", request.url);
     redirectUrl.searchParams.set("callbackUrl", request.nextUrl.pathname);
     return NextResponse.redirect(redirectUrl);
