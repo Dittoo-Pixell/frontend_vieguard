@@ -1,5 +1,5 @@
 import React from 'react';
-import { apiGet } from '@/lib/api';
+import { storeService } from '@/services/storeService';
 import { StoreProfile } from '@/types/store';
 import { SystemSpecStrip } from '@/components/sections/SystemSpecStrip';
 import { HeroSection } from '@/components/sections/HeroSection';
@@ -9,7 +9,8 @@ import { ProcessSection } from '@/components/sections/ProcessSection';
 
 async function getStoreProfile(): Promise<StoreProfile | null> {
   try {
-    return await apiGet<StoreProfile>('/api/website/store-profile');
+    const res = await storeService.getProfile();
+    return res?.data || null;
   } catch {
     return null;
   }
@@ -34,7 +35,7 @@ export default async function HomePage() {
         {/* 2. Quick Access 3 Cards */}
         <QuickAccessSection />
 
-        {/* 3. Portfolio Preview (Live API + Skeleton Loading) */}
+        {/* 3. Portfolio Preview (TanStack Query + Skeleton Loading) */}
         <PortfolioPreviewSection />
 
         {/* 4. Supplemental Process Protocol (4-Step QC) */}

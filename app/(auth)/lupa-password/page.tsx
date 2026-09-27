@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { apiPost } from '@/lib/api';
+import { authService } from '@/services/authService';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { KeyRound, ArrowRight, ArrowLeft, Mail, AlertCircle, ShieldQuestion } from 'lucide-react';
@@ -25,14 +25,12 @@ export default function ForgotPasswordPage() {
 
     try {
       setIsLoading(true);
-      await apiPost('/api/website/auth/forgot-password', { email });
-      // Redirect to OTP verification page
+      await authService.forgotPassword(email);
       router.push(`/konfirmasi-kode?email=${encodeURIComponent(email)}`);
     } catch (err: any) {
       console.error('Forgot password error:', err);
-      // Even if failed or for demo fallback, provide clear feedback
       setErrorMessage(
-        err?.message || 'Gagal mengirim kode verifikasi. Pastikan email Anda terdaftar.'
+        err?.message || 'Gagal mengirim kode verifikasi. Pastikan email Anda terdaftar atau server backend aktif.'
       );
     } finally {
       setIsLoading(false);

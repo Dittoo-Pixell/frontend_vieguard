@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { apiPost } from '@/lib/api';
+import { authService } from '@/services/authService';
 import { User } from '@/types/auth';
 import { useAuthStore } from '@/store/authStore';
 import { setStoredUser } from '@/lib/auth';
@@ -52,7 +52,7 @@ export default function RegisterPage() {
 
     try {
       setIsLoading(true);
-      const res = await apiPost<{ user: User }>('/api/website/auth/register', {
+      const res = await authService.register({
         name,
         email,
         phone: phone || undefined,
@@ -60,16 +60,16 @@ export default function RegisterPage() {
         password,
       });
 
-      if (res && res.user) {
-        setUser(res.user);
-        setStoredUser(res.user);
+      if (res && res.data?.user) {
+        setUser(res.data.user);
+        setStoredUser(res.data.user);
         router.push('/');
         router.refresh();
       }
     } catch (err: any) {
       console.error('Register error:', err);
       setErrorMessage(
-        err?.message || 'Pendaftaran gagal. Periksa data Anda atau gunakan email lain.'
+        err?.message || 'Pendaftaran belum dapat diproses karena koneksi ke server backend/database belum aktif.'
       );
     } finally {
       setIsLoading(false);

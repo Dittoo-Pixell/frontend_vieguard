@@ -1,50 +1,21 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import { Product } from '@/types/product';
-import { apiGet } from '@/lib/api';
+import { useQuery } from '@tanstack/react-query';
+import { productService } from '@/services/productService';
 import { PortfolioCard } from '@/components/cards/PortfolioCard';
 import { Skeleton } from '@/components/ui/Skeleton';
 import { CheckCircle2, ArrowRight, FolderKanban } from 'lucide-react';
 
 export function PortfolioPreviewSection() {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const { data: response, isLoading, isError } = useQuery({
+    queryKey: ['products', 'preview'],
+    queryFn: () => productService.getProducts(),
+    retry: 1,
+  });
 
-  useEffect(() => {
-    let isMounted = true;
-
-    async function loadPortfolio() {
-      try {
-        setIsLoading(true);
-        setError(null);
-        // Backend website products endpoint: GET /api/website/products
-        const data = await apiGet<Product[]>('/api/website/products');
-        if (isMounted) {
-          // Take first 4 items for the preview section
-          const items = Array.isArray(data) ? data.slice(0, 4) : [];
-          setProducts(items);
-        }
-      } catch (err: unknown) {
-        if (isMounted) {
-          console.error('Failed to load portfolio preview:', err);
-          setError('Gagal memuat galeri portofolio.');
-        }
-      } finally {
-        if (isMounted) {
-          setIsLoading(false);
-        }
-      }
-    }
-
-    loadPortfolio();
-
-    return () => {
-      isMounted = false;
-    };
-  }, []);
+  const products = Array.isArray(response?.data) ? response.data.slice(0, 4) : [];
 
   return (
     <section
@@ -62,7 +33,7 @@ export function PortfolioPreviewSection() {
           </p>
         </div>
         <div className="text-xs font-semibold text-[#667085] flex items-center gap-2">
-          <span className="px-2.5 py-1 rounded-md bg-[#F1F4F9] text-[#1E3A8A] font-bold text-[11px]">
+          <span className="px-2.5 py-1 rounded-md bg-[#F1F5F9] text-[#1E3A8A] font-bold text-[11px]">
             {isLoading ? 'MEMUAT DATA...' : `MENAMPILKAN: ${products.length} PROYEK TERPILIH`}
           </span>
         </div>
@@ -88,24 +59,16 @@ export function PortfolioPreviewSection() {
             </div>
           ))}
         </div>
-      ) : error ? (
-        <div className="py-12 text-center space-y-3">
-          <p className="text-sm text-[#DC2626] font-medium">{error}</p>
-          <button
-            onClick={() => window.location.reload()}
-            className="text-xs font-semibold text-[#1E3A8A] underline hover:opacity-80"
-          >
-            Muat Ulang Halaman
-          </button>
-        </div>
-      ) : products.length === 0 ? (
+      ) : isError || products.length === 0 ? (
         <div className="py-14 text-center flex flex-col items-center justify-center space-y-3 bg-[#F7F9FC] rounded-xl border border-dashed border-[#CBD5E1]">
           <FolderKanban className="w-10 h-10 text-[#98A2B3]" />
           <h4 className="text-sm font-bold text-[#172033]">
-            Belum Ada Portofolio Ditampilkan
+            {isError ? 'Layanan Galeri Belum Terhubung' : 'Belum Ada Portofolio Ditampilkan'}
           </h4>
           <p className="text-xs text-[#667085] max-w-sm">
-            Katalog dan portofolio pesanan sedang diperbarui. Anda dapat langsung mengkonsultasikan kebutuhan seragam Anda dengan tim kami.
+            {isError
+              ? 'Server backend atau database sedang dalam tahap integrasi. Anda tetap dapat menjelajahi layout tampilan lainnya.'
+              : 'Katalog dan portofolio pesanan sedang diperbarui. Anda dapat langsung mengkonsultasikan kebutuhan seragam Anda dengan tim kami.'}
           </p>
           <Link
             href="/pesan-seragam"

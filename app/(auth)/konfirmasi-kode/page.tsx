@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { apiPost } from '@/lib/api';
+import { authService } from '@/services/authService';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import {
@@ -95,7 +95,7 @@ export default function KonfirmasiKodePage() {
     if (!canResend || !email) return;
     try {
       setErrorMessage(null);
-      await apiPost('/api/website/auth/forgot-password', { email });
+      await authService.forgotPassword(email);
       setTimeLeft(60);
       setCanResend(false);
       setSuccessMessage('Kode OTP baru telah dikirimkan ke email Anda.');
@@ -133,7 +133,7 @@ export default function KonfirmasiKodePage() {
     try {
       setIsLoading(true);
       const fullOtp = otp.join('');
-      await apiPost('/api/website/auth/reset-password', {
+      await authService.resetPassword({
         email,
         otpCode: fullOtp,
         newPassword,
@@ -143,7 +143,7 @@ export default function KonfirmasiKodePage() {
     } catch (err: any) {
       console.error('Reset password error:', err);
       setErrorMessage(
-        err?.message || 'Gagal memperbarui kata sandi. Pastikan kode OTP sesuai.'
+        err?.message || 'Gagal memperbarui kata sandi. Pastikan kode OTP sesuai atau server backend aktif.'
       );
     } finally {
       setIsLoading(false);
