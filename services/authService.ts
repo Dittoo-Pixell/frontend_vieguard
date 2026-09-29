@@ -24,10 +24,10 @@ export const authService = {
   },
 
   async getProfile(): Promise<ApiResponse<User>> {
-    return apiClient.get('/users/profile');
+    return apiClient.get('/users/me');
   },
 
   async updateProfile(data: { name?: string; phone?: string; address?: string; profilePhoto?: string }): Promise<ApiResponse<User>> {
-    return apiClient.put('/users/profile', data);
+    return apiClient.put('/users/me', data);
   },
 };

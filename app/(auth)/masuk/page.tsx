@@ -38,11 +38,14 @@ export default function LoginPage() {
         password,
       });
 
-      if (res && res.data?.user) {
-        setUser(res.data.user);
-        setStoredUser(res.data.user);
-        router.push('/');
-        router.refresh();
+      const user = res.data?.user || (res.data as any) || (res as any)?.user;
+      if (user) {
+        setUser(user);
+        setStoredUser(user);
+        const params = new URLSearchParams(window.location.search);
+        const redirectUrl = params.get('callbackUrl') || params.get('redirect') || '/';
+        window.location.href = redirectUrl;
+        return;
       }
     } catch (err: any) {
       console.error('Login error:', err);

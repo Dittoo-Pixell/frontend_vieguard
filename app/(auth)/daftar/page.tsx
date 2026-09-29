@@ -60,11 +60,12 @@ export default function RegisterPage() {
         password,
       });
 
-      if (res && res.data?.user) {
-        setUser(res.data.user);
-        setStoredUser(res.data.user);
-        router.push('/');
-        router.refresh();
+      const user = res.data?.user || (res.data as any) || (res as any)?.user;
+      if (user) {
+        setUser(user);
+        setStoredUser(user);
+        window.location.href = '/';
+        return;
       }
     } catch (err: any) {
       console.error('Register error:', err);
